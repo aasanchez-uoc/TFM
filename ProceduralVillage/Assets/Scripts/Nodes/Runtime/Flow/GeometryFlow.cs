@@ -6,4 +6,5 @@ using UnityEngine.ProBuilder;
 public class GeometryFlow : GraphFlow
 {
     public ProBuilderMesh Mesh;
+
 }

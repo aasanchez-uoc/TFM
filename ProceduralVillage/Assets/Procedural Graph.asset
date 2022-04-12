@@ -18,29 +18,83 @@ MonoBehaviour:
   - id: 1
   - id: 2
   - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
   edges:
-  - GUID: 46d7cd34-c61e-45fd-b4cd-e3c1dceb1602
+  - GUID: 3788f0fa-10e4-4d63-b7ea-0203849cd41c
     owner: {fileID: 11400000}
-    inputNodeGUID: d08188e2-2345-4e03-bc49-f4476041a19d
+    inputNodeGUID: acb5cdab-43f9-4601-b267-bba757a74123
     outputNodeGUID: 2445caf3-2efe-468c-828b-94d6ca3c490b
     inputFieldName: InputFlow
     outputFieldName: StartFlow
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: b4220abe-b15f-4d02-b4b8-b5156effba59
+  - GUID: a1bcd977-904f-4a9c-a7ee-67d45682c0d5
     owner: {fileID: 11400000}
-    inputNodeGUID: e24ae790-2bfe-48e8-984d-a42184b37d2b
-    outputNodeGUID: d08188e2-2345-4e03-bc49-f4476041a19d
+    inputNodeGUID: df760f92-8809-439c-abe6-72204acf4abd
+    outputNodeGUID: acb5cdab-43f9-4601-b267-bba757a74123
     inputFieldName: InputFlow
     outputFieldName: OutputFlow
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: 0f31186c-b7a4-4e5b-818e-11049c70ca37
+  - GUID: cc6e0021-e784-4929-bd22-7dfa04ae8b84
+    owner: {fileID: 11400000}
+    inputNodeGUID: d5efbe94-2e18-4a65-a367-fc039592e178
+    outputNodeGUID: df760f92-8809-439c-abe6-72204acf4abd
+    inputFieldName: InputFlow
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 0bd89aba-85e6-431c-a25d-ea9704b6a61f
+    owner: {fileID: 11400000}
+    inputNodeGUID: 3c1e8b1f-85cf-45b0-a732-b6b010fead21
+    outputNodeGUID: d5efbe94-2e18-4a65-a367-fc039592e178
+    inputFieldName: InputFlow
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 32610038-e336-45aa-af36-fe1b8858bad8
+    owner: {fileID: 11400000}
+    inputNodeGUID: 7e7bd225-afa3-40a6-8c16-9a1a3e07cefa
+    outputNodeGUID: 3c1e8b1f-85cf-45b0-a732-b6b010fead21
+    inputFieldName: InputFlow
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 9250763b-519c-4fb1-a04d-ad4d12e026ce
+    owner: {fileID: 11400000}
+    inputNodeGUID: 7e7bd225-afa3-40a6-8c16-9a1a3e07cefa
+    outputNodeGUID: 25bf9955-3313-4878-a47e-92f9937e931e
+    inputFieldName: InputMaterial
+    outputFieldName: OutputMaterial
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 2ce54222-99ae-4ae8-9eb8-bad896a689a9
     owner: {fileID: 11400000}
     inputNodeGUID: 816a8b50-7e23-44cc-b762-4a8f9eb43204
-    outputNodeGUID: e24ae790-2bfe-48e8-984d-a42184b37d2b
+    outputNodeGUID: 7e7bd225-afa3-40a6-8c16-9a1a3e07cefa
     inputFieldName: inputFlow
     outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 480558a5-83e3-4c6c-b6ea-95bb7ab98bc9
+    owner: {fileID: 11400000}
+    inputNodeGUID: 85070d15-c9c6-4f90-b38a-a9d78abab874
+    outputNodeGUID: d5efbe94-2e18-4a65-a367-fc039592e178
+    inputFieldName: InputFlow
+    outputFieldName: OhterOutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 08476b3e-838d-4738-9379-839c9fcc6ca1
+    owner: {fileID: 11400000}
+    inputNodeGUID: 85070d15-c9c6-4f90-b38a-a9d78abab874
+    outputNodeGUID: a8488c1b-f435-4bc2-a633-5eedae136e19
+    inputFieldName: InputMaterial
+    outputFieldName: OutputMaterial
     inputPortIdentifier: 
     outputPortIdentifier: 
   groups: []
@@ -50,8 +104,8 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 209.6, y: -5.6, z: 0}
-  scale: {x: 1, y: 1, z: 1}
+  position: {x: -306.4, y: 145.6, z: 0}
+  scale: {x: 0.65751624, y: 0.65751624, z: 1}
   references:
     version: 1
     00000000:
@@ -59,13 +113,13 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 816a8b50-7e23-44cc-b762-4a8f9eb43204
-        computeOrder: 3
+        computeOrder: 7
         position:
           serializedVersion: 2
-          x: 906.4
-          y: 100
-          width: 111.20001
-          height: 75.2
+          x: 1978.3003
+          y: -13.599995
+          width: 112
+          height: 75.200005
         expanded: 0
         debug: 0
         nodeLock: 0
@@ -74,7 +128,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 2445caf3-2efe-468c-828b-94d6ca3c490b
-        computeOrder: 0
+        computeOrder: 1
         position:
           serializedVersion: 2
           x: 85.479996
@@ -88,14 +142,14 @@ MonoBehaviour:
       type: {class: PlaneNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
-        GUID: d08188e2-2345-4e03-bc49-f4476041a19d
-        computeOrder: 1
+        GUID: acb5cdab-43f9-4601-b267-bba757a74123
+        computeOrder: 2
         position:
           serializedVersion: 2
-          x: 296.10004
+          x: 353
           y: 100
-          width: 197.6
-          height: 171.2
+          width: 195
+          height: 171
         expanded: 0
         debug: 0
         nodeLock: 0
@@ -107,19 +161,87 @@ MonoBehaviour:
       type: {class: Extrude, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
-        GUID: e24ae790-2bfe-48e8-984d-a42184b37d2b
-        computeOrder: 2
+        GUID: df760f92-8809-439c-abe6-72204acf4abd
+        computeOrder: 3
         position:
           serializedVersion: 2
-          x: 589.1501
+          x: 666
           y: 100
-          width: 272.8
-          height: 119.2
+          width: 268
+          height: 120
         expanded: 0
         debug: 0
         nodeLock: 0
-        Height: 3
+        Height: 1
         ExtrudedFaces:
+        - m_Indexes: 000000000100000002000000010000000300000002000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 0
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 040000000500000006000000050000000700000006000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 0
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 08000000090000000a000000090000000b0000000a000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 0
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 0c0000000d0000000e0000000d0000000f0000000e000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 0
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
         - m_Indexes: 100000001100000012000000110000001300000012000000
           m_SmoothingGroup: 0
           m_Uv:
@@ -133,7 +255,7 @@ MonoBehaviour:
             m_Rotation: 0
             m_Anchor: 9
           m_Material: {fileID: 0}
-          m_SubmeshIndex: 1
+          m_SubmeshIndex: 0
           m_ManualUV: 0
           elementGroup: -1
           m_TextureGroup: -1
@@ -150,7 +272,7 @@ MonoBehaviour:
             m_Rotation: 0
             m_Anchor: 9
           m_Material: {fileID: 0}
-          m_SubmeshIndex: 1
+          m_SubmeshIndex: 0
           m_ManualUV: 0
           elementGroup: -1
           m_TextureGroup: -1
@@ -167,7 +289,7 @@ MonoBehaviour:
             m_Rotation: 0
             m_Anchor: 9
           m_Material: {fileID: 0}
-          m_SubmeshIndex: 1
+          m_SubmeshIndex: 0
           m_ManualUV: 0
           elementGroup: -1
           m_TextureGroup: -1
@@ -184,78 +306,45 @@ MonoBehaviour:
             m_Rotation: 0
             m_Anchor: 9
           m_Material: {fileID: 0}
-          m_SubmeshIndex: 1
+          m_SubmeshIndex: 0
           m_ManualUV: 0
           elementGroup: -1
           m_TextureGroup: -1
-        - m_Indexes: 200000002100000022000000210000002300000022000000
-          m_SmoothingGroup: 0
-          m_Uv:
-            m_UseWorldSpace: 0
-            m_FlipU: 0
-            m_FlipV: 0
-            m_SwapUV: 0
-            m_Fill: 1
-            m_Scale: {x: 1, y: 1}
-            m_Offset: {x: 0, y: 0}
-            m_Rotation: 0
-            m_Anchor: 9
-          m_Material: {fileID: 0}
-          m_SubmeshIndex: 1
-          m_ManualUV: 0
-          elementGroup: -1
-          m_TextureGroup: -1
-        - m_Indexes: 240000002500000026000000250000002700000026000000
-          m_SmoothingGroup: 0
-          m_Uv:
-            m_UseWorldSpace: 0
-            m_FlipU: 0
-            m_FlipV: 0
-            m_SwapUV: 0
-            m_Fill: 1
-            m_Scale: {x: 1, y: 1}
-            m_Offset: {x: 0, y: 0}
-            m_Rotation: 0
-            m_Anchor: 9
-          m_Material: {fileID: 0}
-          m_SubmeshIndex: 1
-          m_ManualUV: 0
-          elementGroup: -1
-          m_TextureGroup: -1
-        - m_Indexes: 28000000290000002a000000290000002b0000002a000000
-          m_SmoothingGroup: 0
-          m_Uv:
-            m_UseWorldSpace: 0
-            m_FlipU: 0
-            m_FlipV: 0
-            m_SwapUV: 0
-            m_Fill: 1
-            m_Scale: {x: 1, y: 1}
-            m_Offset: {x: 0, y: 0}
-            m_Rotation: 0
-            m_Anchor: 9
-          m_Material: {fileID: 0}
-          m_SubmeshIndex: 1
-          m_ManualUV: 0
-          elementGroup: -1
-          m_TextureGroup: -1
-        - m_Indexes: 2c0000002d0000002e0000002d0000002f0000002e000000
-          m_SmoothingGroup: 0
-          m_Uv:
-            m_UseWorldSpace: 0
-            m_FlipU: 0
-            m_FlipV: 0
-            m_SwapUV: 0
-            m_Fill: 1
-            m_Scale: {x: 1, y: 1}
-            m_Offset: {x: 0, y: 0}
-            m_Rotation: 0
-            m_Anchor: 9
-          m_Material: {fileID: 0}
-          m_SubmeshIndex: 1
-          m_ManualUV: 0
-          elementGroup: -1
-          m_TextureGroup: -1
+        extrudeMethod: 2
+    00000004:
+      type: {class: SplitFace, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: d5efbe94-2e18-4a65-a367-fc039592e178
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 966
+          y: 100
+          width: 219
+          height: 141
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        FaceSelector: 4
+        NewObjectParent: 0
+    00000005:
+      type: {class: Extrude, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 3c1e8b1f-85cf-45b0-a732-b6b010fead21
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 1301.1003
+          y: -132.20004
+          width: 272.80005
+          height: 119.2
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Height: 0.4
+        ExtrudedFaces:
         - m_Indexes: 300000003100000032000000310000003300000032000000
           m_SmoothingGroup: 0
           m_Uv:
@@ -392,4 +481,206 @@ MonoBehaviour:
           m_ManualUV: 0
           elementGroup: -1
           m_TextureGroup: -1
+        - m_Indexes: 500000005100000052000000510000005300000052000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 1
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 540000005500000056000000550000005700000056000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 1
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 58000000590000005a000000590000005b0000005a000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 1
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 5c0000005d0000005e0000005d0000005f0000005e000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 1
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 600000006100000062000000610000006300000062000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 1
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 640000006500000066000000650000006700000066000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 1
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 68000000690000006a000000690000006b0000006a000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 1
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
+        - m_Indexes: 6c0000006d0000006e0000006d0000006f0000006e000000
+          m_SmoothingGroup: 0
+          m_Uv:
+            m_UseWorldSpace: 0
+            m_FlipU: 0
+            m_FlipV: 0
+            m_SwapUV: 0
+            m_Fill: 1
+            m_Scale: {x: 1, y: 1}
+            m_Offset: {x: 0, y: 0}
+            m_Rotation: 0
+            m_Anchor: 9
+          m_Material: {fileID: 0}
+          m_SubmeshIndex: 1
+          m_ManualUV: 0
+          elementGroup: -1
+          m_TextureGroup: -1
         extrudeMethod: 0
+    00000006:
+      type: {class: StandardMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: a8488c1b-f435-4bc2-a633-5eedae136e19
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 928.5002
+          y: 349.60004
+          width: 231.20001
+          height: 75.20001
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        MaterialColor: {r: 0.9622642, g: 0.9622642, b: 0.76618016, a: 0}
+        OutputMaterial: {fileID: 0}
+    00000007:
+      type: {class: StandardMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 25bf9955-3313-4878-a47e-92f9937e931e
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 1391.6002
+          y: 46.657677
+          width: 231.19995
+          height: 75.200005
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        MaterialColor: {r: 1, g: 0.46627086, b: 0, a: 0}
+        OutputMaterial: {fileID: 0}
+    00000008:
+      type: {class: SetMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 7e7bd225-afa3-40a6-8c16-9a1a3e07cefa
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 1667.9004
+          y: -112.800026
+          width: 211.19995
+          height: 99.2
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        InputMaterial: {fileID: 0}
+    00000009:
+      type: {class: SetMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 85070d15-c9c6-4f90-b38a-a9d78abab874
+        computeOrder: 9
+        position:
+          serializedVersion: 2
+          x: 1379.3102
+          y: 299
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        InputMaterial: {fileID: 0}

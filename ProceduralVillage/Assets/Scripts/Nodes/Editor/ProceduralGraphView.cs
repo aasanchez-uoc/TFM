@@ -20,7 +20,7 @@ public class ProceduralGraphView : BaseGraphView
 	{
 		initialized += Initialize;
 		Undo.undoRedoPerformed += ReloadGraph;
-		RegisterCallback<DetachFromPanelEvent>(e => Disable());
+		//RegisterCallback<DetachFromPanelEvent>(e => Disable());
 
 		SetupZoom(0.05f, 32f);
 	}
@@ -80,7 +80,15 @@ public class ProceduralGraphView : BaseGraphView
 		};
 		graph.onGraphChanges -= ProcessGraphWhenChanged;
 		graph.onGraphChanges += ProcessGraphWhenChanged;
+
+
 	}
+
+	protected override void InitializeView()
+	{
+		Loading = false;
+	}
+
 
 	public void Disable()
 	{
