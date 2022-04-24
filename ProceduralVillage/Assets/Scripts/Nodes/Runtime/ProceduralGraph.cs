@@ -43,6 +43,7 @@ public class ProceduralGraph : BaseGraph
         set => _inputNode = value;
     }
 
+    public bool showParameterView;
 
     void Enabled()
     {

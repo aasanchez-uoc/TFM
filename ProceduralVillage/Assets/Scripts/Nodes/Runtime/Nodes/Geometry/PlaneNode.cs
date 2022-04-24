@@ -1,6 +1,7 @@
 using GraphProcessor;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 
@@ -20,12 +21,21 @@ public class PlaneNode : BaseFlowNode
     [Input, ShowAsDrawer]
     public int HeightCuts = 1;
 
-    [Output("Output flow")]
+    [Output("Output flow", allowMultiple = false)]
     public new GeometryFlow OutputFlow;
 
-    protected override void Process()
+
+    [CustomPortInput(nameof(InputFlows), typeof(GraphFlow), allowCast = true)]
+    public void GetInputs(List<SerializableEdge> edges)
     {
-        if(InputFlow?.CurrentGameObject != null)
+        InputFlows = edges.Select(e => (GraphFlow)e.passThroughBuffer);
+    }
+
+    protected override void Process(int index)
+    {
+        if (InputFlows == null || InputFlows.Count() == 0) return;
+        GraphFlow InputFlow = InputFlows.ToList()[index];
+        if (InputFlow?.CurrentGameObject != null)
         {
             ProBuilderMesh m_Mesh = ShapeGenerator.GeneratePlane(PivotLocation.Center, Width, Height, WidthCuts, HeightCuts, Axis.Up);
             m_Mesh.SetMaterial(m_Mesh.faces, BuiltinMaterials.defaultMaterial);

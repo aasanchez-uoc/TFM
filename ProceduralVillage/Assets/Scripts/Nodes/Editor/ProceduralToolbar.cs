@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class ProceduralToolbar : ToolbarView
 {
+	ProceduralGraph graph => graphView.graph as ProceduralGraph;
     new ProceduralGraphView graphView => base.graphView as ProceduralGraphView;
 
     public ProceduralToolbar(BaseGraphView graphView) : base(graphView)
     {
 
     }
+
 
 	protected override void AddButtons()
 	{
@@ -22,6 +24,9 @@ public class ProceduralToolbar : ToolbarView
 
 		AddButton("Fit view", () => graphView.FrameAll());
 
+		AddFlexibleSpace(left: false);
+
+		AddToggle("Parameters", graph.showParameterView, ToggleParameterView, left: false);
 	}
 
 	void AddProcessButton()
@@ -33,4 +38,9 @@ public class ProceduralToolbar : ToolbarView
 		EditorApplication.delayCall += () => graphView.ProcessGraph();
 	}
 
+	void ToggleParameterView(bool state)
+	{
+		graphView.ToggleView<ProceduralParameterView>();
+		graph.showParameterView = state;
+	}
 }

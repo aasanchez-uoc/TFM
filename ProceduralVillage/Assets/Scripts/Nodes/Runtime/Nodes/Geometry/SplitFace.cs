@@ -1,31 +1,30 @@
 using GraphProcessor;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 using UnityEngine.ProBuilder.MeshOperations;
 
 [System.Serializable, NodeMenuItem("Geometry/Transformations/SplitFace")]
-public class SplitFace : ProceduralNode
+public class SplitFace : GeometryFlowBaseNode
 {
-    [Input("Input flow")]
-    public GeometryFlow InputFlow;
-
     public Selector FaceSelector;
 
     public SpawnLevel NewObjectParent;
 
-    [Output("Selected Faces")]
-    public GeometryFlow OutputFlow;
+    [Output("Selected Faces", allowMultiple = false)]
+    public new GeometryFlow OutputFlow;
 
-    [Output("Remaining Faces")]
-    public GeometryFlow OhterOutputFlow;
+    [Output("Remaining Faces", allowMultiple = false)]
+    public GeometryFlow OtherOutputFlow;
 
-    protected override void Process()
+    protected override void Process(int index)
     {
+        if (InputFlows == null || InputFlows.Count() ==  0) return;
         List<Face> selectedFaces = new List<Face>();
-
-        if (InputFlow?.CurrentGameObject != null && InputFlow?.Mesh != null)
+        GeometryFlow InputFlow = InputFlows.ToList()[index];
+        if (InputFlow?.CurrentGameObject != null && InputFlow.Mesh != null)
         {
             foreach (Face face in InputFlow.Mesh.faces)
             {
@@ -123,13 +122,13 @@ public class SplitFace : ProceduralNode
             OutputFlow.Mesh.transform.parent = InputFlow.CurrentGameObject.transform;
 
 
-            OhterOutputFlow = InputFlow;
+            OtherOutputFlow = InputFlow;
 
             OutputFlow.Mesh.ToMesh();
             OutputFlow.Mesh.Refresh();
 
-            OhterOutputFlow.Mesh.ToMesh();
-            OhterOutputFlow.Mesh.Refresh();
+            OtherOutputFlow.Mesh.ToMesh();
+            OtherOutputFlow.Mesh.Refresh();
         }
     }
 }
