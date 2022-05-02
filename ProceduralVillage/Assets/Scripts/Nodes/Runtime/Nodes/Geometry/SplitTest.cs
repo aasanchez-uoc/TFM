@@ -32,7 +32,7 @@ public class SplitTest : GeometryFlowBaseNode
         }
     }
 
-    void ApplySplit(SplitDirection dirName, ProBuilderMesh mesh, float distance = 0.0f)
+    void ApplySplit(SplitDirection dirName, ProBuilderMesh mesh, float distance = 0.50f)
     {
               
         Vector3 dir = DirectionNameToVecto3(dirName);
@@ -42,12 +42,12 @@ public class SplitTest : GeometryFlowBaseNode
         if (r == null)
             return;
 
-        //float dirSize;
-        //if(dirName == SplitDirection.X) dirSize = r.bounds.size.x - r.bounds.center.x/2;
-        //else if (dirName == SplitDirection.Y) dirSize = r.bounds.size.y - r.bounds.center.y/2;
-        //else dirSize = r.bounds.size.z - r.bounds.center.z/2;
+        float dirSize;
+        if (dirName == SplitDirection.X) dirSize = -r.bounds.size.x/2 + r.bounds.center.x ;
+        else if (dirName == SplitDirection.Y) dirSize = -r.bounds.size.y/2 + r.bounds.center.y;
+        else dirSize = -r.bounds.size.z/2 + r.bounds.center.z ;
 
-        Plane splitPlane = new Plane(dir, distance  + mesh.transform.position.magnitude);
+        Plane splitPlane = new Plane(dir, distance + dirSize);
 
         HashSet<Edge> edgesToSplit = new HashSet<Edge>();
         List<Face> facesToSplit = new List<Face>();
@@ -169,7 +169,7 @@ public class SplitTest : GeometryFlowBaseNode
                 dir.x = 1;
                 break;
             case SplitDirection.Y:
-                dir.y = 1;
+                dir.y = -1;
                 break;
             case SplitDirection.Z:
                 dir.z = 1;

@@ -9,7 +9,6 @@ public class ComputeOrderInfo
 {
     public Dictionary<BaseNode, MultiFlowInfo> MultiFlowNodes = new Dictionary<BaseNode, MultiFlowInfo>();
 
-
     public void Clear() => MultiFlowNodes.Clear();
 }
 
@@ -37,6 +36,8 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
 {
     internal int isProcessing = 0;
 
+    int maxLoopLevel = 10;
+
     internal new ProceduralGraph graph => base.graph as ProceduralGraph;
 
     List<BaseNode> nodesToProcess = new List<BaseNode>();
@@ -50,14 +51,29 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
 
     public override void Run()
     {
-        RunNodeList(graph.graphOutputs, true);
-        //RunNodeList(new List<BaseNode> { graph.inputNode }, true);
+        //RunNodeList(graph.graphOutputs, true);
+        //RunNodeList(new List<BaseNode> { graph.inputNode }, false);
+
+        UpdateComputeOrder();
+        ProcessGraphNodes(nodesToProcess, true);
     }
 
     public void RunOnChagedNode(BaseNode node)
     {
         //RunNodeList(new List<BaseNode> { node }, false);
         //RunNodeList(new List<BaseNode> { graph.inputNode }, true);
+        UpdateComputeOrder();
+        List<BaseNode> nodes = nodesToProcess.Where(x => x is BaseFlowNode).ToList();
+        nodes.Add(graph.inputNode);
+        List<BaseNode> deps = GetNodeDependencies(node, false);
+
+        foreach(BaseNode n in deps)
+        {
+            if (!nodes.Contains(n)) nodes.Add(n);
+        }
+
+        ProcessGraphNodes(nodes.OrderBy(x => x.computeOrder), false);
+
     }
 
     private void RunNodeList(IEnumerable<BaseNode> nodes, bool outputs)
@@ -74,8 +90,9 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
     public override void UpdateComputeOrder()
     {
         info.Clear();
+        nodesToProcess.Clear();
 
-        var sortedNodes = graph.nodes.Where(n => n.computeOrder >= 0).OrderBy(n => n.computeOrder).ToList();
+        var sortedNodes = graph.nodes.OrderBy(n => n.computeOrder).ToList();
 
         foreach(BaseNode node in sortedNodes)
         {
@@ -89,8 +106,8 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
                     if (port.fieldName == "InputFlows" && port.GetEdges().Count > 1)
                     {
                         multiFlow = true;
-                        List<BaseNode> depNodes = GetNodeDependencies(node, false);
-
+                        List<BaseNode> depNodes = GetNodeDependencies(node, true);
+                        depNodes.Add(node);
                         var edges = port.GetEdges();
                         for (int i = 0; i < edges.Count; i++)
                         {
@@ -99,15 +116,14 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
                             nodeInfo.DependentNodes = depNodes;
                             info.MultiFlowNodes.Add(edges[i].outputNode, nodeInfo);
                         }
-
                     }
                 }
-                if(!multiFlow) nodesToProcess.Add(node);
+                if(!multiFlow && node.computeOrder >= 0) nodesToProcess.Add(node);
 
             }
             else
             {
-                nodesToProcess.Add(node);
+                if(node.computeOrder >= 0) nodesToProcess.Add(node);
             }
         }
 
@@ -168,20 +184,27 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
         }
     }
 
-    void ProcessNode(BaseNode node, int index = 0)
+    void ProcessNode(BaseNode node, int index = 0, Dictionary<BaseNode, int> loopLevel = null )
     {
-        if (node.computeOrder < 0 || !node.canProcess)
+        if (!node.canProcess)
             return;
         if( node is BaseFlowNode flowNode)
         {
-            flowNode.OnProcess(index);
-            if (info.MultiFlowNodes.ContainsKey(node))
+            if (loopLevel == null) loopLevel = new Dictionary<BaseNode, int>();
+            if (!loopLevel.TryGetValue(node, out int currLevel)) currLevel = 0;
+            if (currLevel != maxLoopLevel)
             {
-                info.MultiFlowNodes.TryGetValue(node, out MultiFlowInfo nodeInfo);
-
-                foreach(BaseNode subNode in nodeInfo.DependentNodes)
+                flowNode.OnProcess(index);
+                if (info.MultiFlowNodes.ContainsKey(node))
                 {
-                    ProcessNode(subNode, nodeInfo.index);
+                    info.MultiFlowNodes.TryGetValue(node, out MultiFlowInfo nodeInfo);
+                    foreach (BaseNode subNode in nodeInfo.DependentNodes)
+                    {
+                        loopLevel[subNode] = currLevel + 1;
+                        ProcessNode(subNode, nodeInfo.index, loopLevel);
+                        loopLevel[subNode] = currLevel;
+                    }
+
                 }
             }
         }

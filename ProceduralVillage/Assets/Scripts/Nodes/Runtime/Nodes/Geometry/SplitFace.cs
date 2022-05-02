@@ -17,7 +17,7 @@ public class SplitFace : GeometryFlowBaseNode
     public new GeometryFlow OutputFlow;
 
     [Output("Remaining Faces", allowMultiple = false)]
-    public GeometryFlow OtherOutputFlow;
+    public GraphFlow OtherOutputFlow;
 
     protected override void Process(int index)
     {
@@ -122,13 +122,15 @@ public class SplitFace : GeometryFlowBaseNode
             OutputFlow.Mesh.transform.parent = InputFlow.CurrentGameObject.transform;
 
 
-            OtherOutputFlow = InputFlow;
+           
 
             OutputFlow.Mesh.ToMesh();
             OutputFlow.Mesh.Refresh();
 
-            OtherOutputFlow.Mesh.ToMesh();
-            OtherOutputFlow.Mesh.Refresh();
+            InputFlow.Mesh.ToMesh();
+            InputFlow.Mesh.Refresh();
+
+            OtherOutputFlow = InputFlow;
         }
     }
 }

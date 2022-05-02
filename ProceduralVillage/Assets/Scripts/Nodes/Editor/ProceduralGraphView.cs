@@ -104,18 +104,19 @@ public class ProceduralGraphView : BaseGraphView
 		if (changes.addedEdge != null || changes.removedEdge != null
 			|| changes.addedNode != null || changes.removedNode != null || changes.nodeChanged != null)
 		{
-				ProcessGraph();
+			ProcessGraph(changes.nodeChanged ?? changes.addedNode);
 		}
 	}
 
-	public void ProcessGraph()
+	public void ProcessGraph(BaseNode sourceNode = null)
 	{
 		try
 		{
 			if (generatedObject != null) UnityEngine.Object.DestroyImmediate(generatedObject.CurrentGameObject);
 			generatedObject = new GraphFlow("Procedural Graph - Preview");
 			graph.inputNode.StartFlow = generatedObject;
-			processor?.Run();
+			if (sourceNode == null) processor?.Run();
+			else processor?.RunOnChagedNode(sourceNode);
 
 		}
 		catch (Exception e)
@@ -132,5 +133,37 @@ public class ProceduralGraphView : BaseGraphView
 		ProcessGraph();
 	}
 
+	public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+	{
+		evt.menu.AppendSeparator();
 
+		string[] guids = AssetDatabase.FindAssets("t:ProceduralGraph", null);
+
+		foreach (string guid in guids)
+		{
+			string assetPath = AssetDatabase.GUIDToAssetPath(guid);
+			ProceduralGraph asset = AssetDatabase.LoadAssetAtPath<ProceduralGraph>(assetPath);
+			if (asset != null && asset != graph)
+			{
+				var mousePos = (evt.currentTarget as VisualElement).ChangeCoordinatesTo(contentViewContainer, evt.localMousePosition);
+				Vector2 nodePosition = mousePos;
+				evt.menu.AppendAction("Graphs/" + asset.name,
+					(e) => CreateGraphNode(nodePosition, asset),
+					DropdownMenuAction.AlwaysEnabled
+				);
+
+			}
+		}
+
+
+		base.BuildContextualMenu(evt);
+	}
+
+	void CreateGraphNode(Vector2 position, ProceduralGraph graph)
+	{
+		RegisterCompleteObjectUndo("Added " + graph.name + " graph node");
+		GraphNode node =(GraphNode) BaseNode.CreateFromType(typeof(GraphNode), position);
+		node.Init(graph);
+		AddNode(node);
+	}
 }
