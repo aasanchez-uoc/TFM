@@ -19,20 +19,20 @@ public class SplitFace : GeometryFlowBaseNode
     [Output("Remaining Faces", allowMultiple = false)]
     public GraphFlow OtherOutputFlow;
 
-    protected override void Process(int index)
+
+    public override void Process(GraphFlow inputflow)
     {
-        if (InputFlows == null || InputFlows.Count() ==  0) return;
-        List<Face> selectedFaces = new List<Face>();
-        GeometryFlow InputFlow = InputFlows.ToList()[index];
+        GeometryFlow InputFlow = inputflow as GeometryFlow;
         if (InputFlow?.CurrentGameObject != null && InputFlow.Mesh != null)
         {
+            List<Face> selectedFaces = new List<Face>();
             foreach (Face face in InputFlow.Mesh.faces)
             {
                 bool isMatch = false;
                 var normal = Math.Normal(InputFlow.Mesh, face);
                 if (FaceSelector == Selector.Horizontal)
                 {
-                    if (Mathf.Abs(Vector3.Dot(normal, Vector3.up) ) >= System.Math.Cos(11.25 / 180.0 * System.Math.PI))
+                    if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) >= System.Math.Cos(11.25 / 180.0 * System.Math.PI))
                     {
                         isMatch = true;
                     }
@@ -93,7 +93,7 @@ public class SplitFace : GeometryFlowBaseNode
                     }
                 }
 
-                if(isMatch)
+                if (isMatch)
                 {
                     selectedFaces.Add(face);
                 }
@@ -101,7 +101,7 @@ public class SplitFace : GeometryFlowBaseNode
 
             List<Face> detachedFaces = InputFlow.Mesh.DetachFaces(selectedFaces);
 
-            if(OutputFlow != null)
+            if (OutputFlow != null)
             {
                 UnityEngine.Object.DestroyImmediate(OutputFlow.CurrentGameObject);
             }
@@ -122,7 +122,7 @@ public class SplitFace : GeometryFlowBaseNode
             OutputFlow.Mesh.transform.parent = InputFlow.CurrentGameObject.transform;
 
 
-           
+
 
             OutputFlow.Mesh.ToMesh();
             OutputFlow.Mesh.Refresh();
@@ -133,7 +133,10 @@ public class SplitFace : GeometryFlowBaseNode
             OtherOutputFlow = InputFlow;
         }
     }
-}
+
+    }
+
+
 
 public enum Selector
 {

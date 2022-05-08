@@ -19,10 +19,9 @@ public class SplitTest : GeometryFlowBaseNode
     Dictionary<Edge, SplitSide> edgeSides;
     Dictionary<Face, SplitSide> faceSides;
 
-    protected override void Process(int index)
+    public override void Process(GraphFlow inputflow)
     {
-        if (InputFlows == null || InputFlows.Count() == 0) return;
-        GeometryFlow InputFlow = InputFlows.ToList()[index];
+        GeometryFlow InputFlow = inputflow as GeometryFlow;
         if (InputFlow?.CurrentGameObject != null && InputFlow.Mesh != null)
         {
             ApplySplit(splitDirection, InputFlow.Mesh);
@@ -32,7 +31,8 @@ public class SplitTest : GeometryFlowBaseNode
         }
     }
 
-    void ApplySplit(SplitDirection dirName, ProBuilderMesh mesh, float distance = 0.50f)
+
+        void ApplySplit(SplitDirection dirName, ProBuilderMesh mesh, float distance = 0.50f)
     {
               
         Vector3 dir = DirectionNameToVecto3(dirName);

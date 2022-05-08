@@ -135,6 +135,8 @@ public class ProceduralGraphView : BaseGraphView
 
 	public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
 	{
+
+
 		evt.menu.AppendSeparator();
 
 		string[] guids = AssetDatabase.FindAssets("t:ProceduralGraph", null);
@@ -147,7 +149,7 @@ public class ProceduralGraphView : BaseGraphView
 			{
 				var mousePos = (evt.currentTarget as VisualElement).ChangeCoordinatesTo(contentViewContainer, evt.localMousePosition);
 				Vector2 nodePosition = mousePos;
-				evt.menu.AppendAction("Graphs/" + asset.name,
+				evt.menu.AppendAction("Node from Graph/" + asset.name,
 					(e) => CreateGraphNode(nodePosition, asset),
 					DropdownMenuAction.AlwaysEnabled
 				);

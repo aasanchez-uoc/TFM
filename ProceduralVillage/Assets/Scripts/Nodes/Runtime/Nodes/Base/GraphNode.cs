@@ -4,32 +4,30 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[System.Serializable]
 public class GraphNode : BaseFlowNode
 {
     [Input]
     public List<object> graphInputs = new List<object>();
 
-    private ProceduralGraph subGraph;
+	[SerializeReference, HideInInspector]
+	public ProceduralGraph subGraphAsset;
+
+	private ProceduralGraph subGraph;
     private ProceduralGraphProcessor processor;
 
 
 	public void Init(ProceduralGraph graph)
     {
-        subGraph = graph;
-        processor = ProcessorManager.GetProcessor(subGraph);
+		subGraphAsset = graph;
+        processor = ProcessorManager.GetProcessor(GetSubGraph());
     }
-
-	[CustomPortInput(nameof(InputFlows), typeof(GraphFlow), allowCast = true)]
-	public void GetInputs(List<SerializableEdge> edges)
-	{
-		InputFlows = edges.Select(e => (GraphFlow)e.passThroughBuffer);
-	}
 
 	[CustomPortBehavior(nameof(graphInputs))]
 	public IEnumerable<PortData> ListGraphParameters(List<SerializableEdge> edges)
 	{
 
-		foreach (var p in subGraph?.exposedParameters)
+		foreach (var p in GetSubGraph()?.exposedParameters)
 		{
 			yield return new PortData
 			{
@@ -43,7 +41,7 @@ public class GraphNode : BaseFlowNode
 	[CustomPortInput(nameof(graphInputs), typeof(object))]
 	protected void GetGraphInputs(List<SerializableEdge> edges)
 	{
-		if (subGraph != null)
+		if (GetSubGraph() != null)
 			AssignPropertiesFromEdges(edges);
 	}
 
@@ -57,23 +55,26 @@ public class GraphNode : BaseFlowNode
 				continue;
 
 			string propID= edge.inputPort.portData.identifier;
-			subGraph.UpdateExposedParameter(propID, edge.passThroughBuffer);
+			GetSubGraph().UpdateExposedParameter(propID, edge.passThroughBuffer);
 
 		}
 	}
-
-
-	protected override void Process(int inputIndex)
-    {
-		if (InputFlows == null) return;
-		GraphFlow InputFlow = InputFlows.ToList()[inputIndex];
+	public override void Process(GraphFlow InputFlow)
+	{
 		if (InputFlow?.CurrentGameObject != null)
 		{
-			subGraph.inputNode.StartFlow = InputFlow;
-			if (processor == null) processor = ProcessorManager.GetProcessor(subGraph);
+			ProceduralGraph currSubGraph = GetSubGraph();
+			currSubGraph.inputNode.StartFlow = InputFlow;
+			if (processor == null) processor = ProcessorManager.GetProcessor(currSubGraph);
 			processor?.Run();
 
-			OutputFlow = subGraph.inputNode.StartFlow;
+			OutputFlow = currSubGraph.inputNode.StartFlow;
 		}
-    }
+	}
+
+		private ProceduralGraph GetSubGraph()
+    {
+		if(subGraph == null && subGraphAsset != null) subGraph = Object.Instantiate(subGraphAsset);
+		return subGraph;
+	}
 }

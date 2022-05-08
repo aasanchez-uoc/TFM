@@ -20,10 +20,11 @@ public class Extrude : GeometryFlowBaseNode
     public Face[] ExtrudedFaces;
 
     public ExtrudeMethod extrudeMethod = ExtrudeMethod.IndividualFaces;
-    protected override void Process(int index)
+
+
+    public override void Process(GraphFlow inputflow)
     {
-        if (InputFlows == null) return;
-        GeometryFlow InputFlow = InputFlows.ToList()[index];
+        GeometryFlow InputFlow = (GeometryFlow) inputflow ;
         if (InputFlow?.CurrentGameObject != null)
         {
             ExtrudedFaces = ExtrudeElements.Extrude(InputFlow.Mesh, InputFlow.Mesh.faces, extrudeMethod, Height);

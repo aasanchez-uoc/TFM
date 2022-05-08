@@ -16,7 +16,24 @@ MonoBehaviour:
   nodes:
   - id: 0
   - id: 1
-  edges: []
+  - id: 2
+  edges:
+  - GUID: 2a71a497-3baa-4b9f-83ba-171a10e54f70
+    owner: {fileID: 11400000}
+    inputNodeGUID: e23dffc6-2d35-42df-bcb3-701c654a289f
+    outputNodeGUID: 06c832a2-b32c-48e6-bc3c-952d0a595c2f
+    inputFieldName: InputFlows
+    outputFieldName: StartFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 785d9cb2-8e74-4201-9b70-853f00910878
+    owner: {fileID: 11400000}
+    inputNodeGUID: c8d27555-8a25-4c2b-a4d6-a229ae157a21
+    outputNodeGUID: e23dffc6-2d35-42df-bcb3-701c654a289f
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
   groups: []
   stackNodes: []
   pinnedElements: []
@@ -24,8 +41,8 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 0, y: 0, z: 0}
-  scale: {x: 1, y: 1, z: 1}
+  position: {x: 144.8, y: 53.6, z: 0}
+  scale: {x: 0.7561437, y: 0.7561437, z: 1}
   showParameterView: 0
   references:
     version: 1
@@ -33,14 +50,14 @@ MonoBehaviour:
       type: {class: OutputNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
-        GUID: 10b8360d-65b4-4d13-b6ad-7a5aef4adf77
-        computeOrder: -1
+        GUID: c8d27555-8a25-4c2b-a4d6-a229ae157a21
+        computeOrder: 2
         position:
           serializedVersion: 2
-          x: 400
-          y: 100
-          width: 100
-          height: 100
+          x: 547
+          y: 108.8
+          width: 112
+          height: 75.2
         expanded: 0
         debug: 0
         nodeLock: 0
@@ -48,8 +65,8 @@ MonoBehaviour:
       type: {class: InputNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
-        GUID: db3eb2d1-b0f7-41ec-bde2-9b7c6ad83cdb
-        computeOrder: -1
+        GUID: 06c832a2-b32c-48e6-bc3c-952d0a595c2f
+        computeOrder: 0
         position:
           serializedVersion: 2
           x: 0
@@ -59,3 +76,19 @@ MonoBehaviour:
         expanded: 0
         debug: 0
         nodeLock: 0
+    00000002:
+      type: {class: GraphNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: e23dffc6-2d35-42df-bcb3-701c654a289f
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 231.55501
+          y: 87.55001
+          width: 194
+          height: 123
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        subGraphAsset: {fileID: 11400000, guid: 37772ac30b7b3d34b9dd697336ce6cb8, type: 2}

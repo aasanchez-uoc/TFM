@@ -16,33 +16,27 @@ public class PlaneNode : BaseFlowNode
     public float Height = 1;
 
     [Input, ShowAsDrawer]
-    public int WidthCuts = 1;
+    public int WidthCuts = 0;
 
     [Input, ShowAsDrawer]
-    public int HeightCuts = 1;
+    public int HeightCuts = 0;
 
     [Output("Output flow", allowMultiple = false)]
     public new GeometryFlow OutputFlow;
 
 
-    [CustomPortInput(nameof(InputFlows), typeof(GraphFlow), allowCast = true)]
-    public void GetInputs(List<SerializableEdge> edges)
-    {
-        InputFlows = edges.Select(e => (GraphFlow)e.passThroughBuffer);
-    }
 
-    protected override void Process(int index)
+    public override void Process(GraphFlow inputFlow)
     {
-        if (InputFlows == null || InputFlows.Count() == 0) return;
-        GraphFlow InputFlow = InputFlows.ToList()[index];
-        if (InputFlow?.CurrentGameObject != null)
+        if (inputFlow?.CurrentGameObject != null)
         {
             ProBuilderMesh m_Mesh = ShapeGenerator.GeneratePlane(PivotLocation.Center, Width, Height, WidthCuts, HeightCuts, Axis.Up);
             m_Mesh.SetMaterial(m_Mesh.faces, BuiltinMaterials.defaultMaterial);
-            m_Mesh.transform.parent = InputFlow.CurrentGameObject.transform;
+            m_Mesh.transform.parent = inputFlow.CurrentGameObject.transform;
             OutputFlow = new GeometryFlow();
-            OutputFlow.CurrentGameObject = InputFlow.CurrentGameObject;
+            OutputFlow.CurrentGameObject = inputFlow.CurrentGameObject;
             OutputFlow.Mesh = m_Mesh;
         }
     }
-}
+
+ }

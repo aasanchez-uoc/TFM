@@ -103,19 +103,23 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
                 foreach (var port in node.inputPorts)
                 {
                     //check if there are multiple input flows
-                    if (port.fieldName == "InputFlows" && port.GetEdges().Count > 1)
+                    if (port.fieldName == "InputFlows")
                     {
-                        multiFlow = true;
-                        List<BaseNode> depNodes = GetNodeDependencies(node, true);
-                        depNodes.Add(node);
-                        var edges = port.GetEdges();
-                        for (int i = 0; i < edges.Count; i++)
+                        if(port.GetEdges().Count > 1)
                         {
-                            MultiFlowInfo nodeInfo = new MultiFlowInfo();
-                            nodeInfo.index = i;
-                            nodeInfo.DependentNodes = depNodes;
-                            info.MultiFlowNodes.Add(edges[i].outputNode, nodeInfo);
+                            multiFlow = true;
+                            List<BaseNode> depNodes = GetNodeDependencies(node, false);
+                            depNodes.Add(node);
+                            var edges = port.GetEdges();
+                            for (int i = 0; i < edges.Count; i++)
+                            {
+                                MultiFlowInfo nodeInfo = new MultiFlowInfo();
+                                nodeInfo.index = i;
+                                nodeInfo.DependentNodes = depNodes;
+                                info.MultiFlowNodes.Add(edges[i].outputNode, nodeInfo);
+                            }
                         }
+
                     }
                 }
                 if(!multiFlow && node.computeOrder >= 0) nodesToProcess.Add(node);
@@ -194,6 +198,18 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
             if (!loopLevel.TryGetValue(node, out int currLevel)) currLevel = 0;
             if (currLevel != maxLoopLevel)
             {
+                if (flowNode.CountInputsOnEdge(index) > 1)
+                {
+                    //flowNode.
+                    int n = flowNode.CountInputsOnEdge(index);
+                    for(int i = 1; i < n; i++)
+                    {
+                        flowNode.Process(index, i);
+                        ProcessNodeFromInput(flowNode);
+                    }
+
+                }
+
                 flowNode.OnProcess(index);
                 if (info.MultiFlowNodes.ContainsKey(node))
                 {
@@ -204,8 +220,11 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
                         ProcessNode(subNode, nodeInfo.index, loopLevel);
                         loopLevel[subNode] = currLevel;
                     }
-
                 }
+
+
+
+
             }
         }
         else
@@ -213,5 +232,18 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
             node.OnProcess();
         }
 
+    }
+
+    public void ProcessNodeFromInput(BaseFlowNode node)
+    {
+        List<BaseNode> depNodes = node.GetOutputNodes().ToList();
+        foreach (BaseNode depNode in depNodes)
+        {
+            if (depNode is BaseFlowNode depFlowNode)
+            {
+                depFlowNode.Process(node.OutputFlow);
+                ProcessNodeFromInput(depFlowNode);
+            }
+        }
     }
 }

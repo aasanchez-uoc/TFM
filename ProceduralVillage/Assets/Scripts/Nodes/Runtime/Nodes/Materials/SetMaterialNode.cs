@@ -13,10 +13,9 @@ public class SetMaterialNode : GeometryFlowBaseNode
     [Output("Output Flow", allowMultiple = false)]
     public new GeometryFlow OutputFlow;
 
-    protected override void Process(int index)
+    public override void Process(GraphFlow inputflow)
     {
-        if (InputFlows == null || InputFlows.Count() == 0) return;
-        GeometryFlow InputFlow = InputFlows.ToList()[index];
+        GeometryFlow InputFlow = inputflow as GeometryFlow;
         if (InputFlow?.CurrentGameObject != null && InputMaterial != null)
         {
             InputFlow.Mesh.SetMaterial(InputFlow.Mesh.faces, InputMaterial);
@@ -25,4 +24,5 @@ public class SetMaterialNode : GeometryFlowBaseNode
             OutputFlow = InputFlow;
         }
     }
-}
+
+    }

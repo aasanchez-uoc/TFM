@@ -10,10 +10,42 @@ public abstract class GeometryFlowBaseNode : BaseFlowNode
     [Input("Input flows", allowMultiple = true)]
     public new IEnumerable<GeometryFlow> InputFlows;
 
+    private List<List<GeometryFlow>> flows;
 
     [CustomPortInput(nameof(InputFlows), typeof(GeometryFlow), allowCast = true)]
-    public void GetInputs(List<SerializableEdge> edges)
+    public override void GetInputs(List<SerializableEdge> edges)
     {
-        InputFlows = edges.Select(e => (GeometryFlow)e.passThroughBuffer);
+        flows = new List<List<GeometryFlow>>();
+        var list = new List<GeometryFlow>();
+
+        foreach(SerializableEdge e in edges)
+        {
+            if( e.passThroughBuffer is GeometryFlow flow)
+            {
+                list.Add(flow);
+                flows.Add(new List<GeometryFlow>() { flow });
+            }
+            if (e.passThroughBuffer is List<GeometryFlow> flowList)
+            {
+                flows.Add(flowList);
+                list.AddRange(flowList);
+            }
+        }
+        InputFlows = list;
     }
+
+    public override void Process(int inputIndex, int subIndex = 0)
+    {
+        if (flows == null || flows.Count <= inputIndex) return;
+        List<GeometryFlow> list = flows[inputIndex];
+        if (list == null || list.Count() <= subIndex) return;
+        GraphFlow InputFlow = list[subIndex];
+        Process(InputFlow);
+    }
+    public override int CountInputsOnEdge(int index)
+    {
+        if (flows == null) return 0;
+        return flows[index].Count;
+    }
+
 }
