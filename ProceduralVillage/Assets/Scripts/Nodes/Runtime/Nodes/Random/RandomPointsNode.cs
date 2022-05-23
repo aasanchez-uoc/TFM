@@ -34,16 +34,10 @@ public class RandomPointsNode : ProceduralNode
         {
 			Vector3 point = GetRandomPoint();
 			o.Add(point);
-
-			//GameObject go = new GameObject();
-			//go.transform.position = point;
 		}
 
-		o.Add(new Vector3(minX,minZ));
-		o.Add(new Vector3(minX, maxZ));
-		o.Add(new Vector3(maxX, minZ));
-		o.Add(new Vector3(maxX, maxZ));
-	}
+
+    }
 
     public Vector3 GetRandomPoint()
     {

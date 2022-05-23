@@ -21,6 +21,7 @@ public class GraphNode : BaseFlowNode
     {
 		subGraphAsset = graph;
         processor = ProcessorManager.GetProcessor(GetSubGraph());
+		SetCustomName(graph.name);
     }
 
 	[CustomPortBehavior(nameof(graphInputs))]

@@ -7,130 +7,110 @@ using UnityEngine.ProBuilder;
 using UnityEngine.ProBuilder.MeshOperations;
 
 [System.Serializable, NodeMenuItem("Geometry/Transformations/SplitFace")]
-public class SplitFace : GeometryFlowBaseNode
+public class SplitFace : BaseFlowNode
 {
     public Selector FaceSelector;
 
     public SpawnLevel NewObjectParent;
 
-    [Output("Selected Faces", allowMultiple = false)]
-    public new GeometryFlow OutputFlow;
-
     [Output("Remaining Faces", allowMultiple = false)]
     public GraphFlow OtherOutputFlow;
 
+    public string ObjectName = "Split Face";
 
-    public override void Process(GraphFlow inputflow)
+    public override void Process(GraphFlow InputFlow)
     {
-        GeometryFlow InputFlow = inputflow as GeometryFlow;
-        if (InputFlow?.CurrentGameObject != null && InputFlow.Mesh != null)
+        if (InputFlow?.CurrentGameObject != null)
         {
-            List<Face> selectedFaces = new List<Face>();
-            foreach (Face face in InputFlow.Mesh.faces)
+            ProBuilderMesh Mesh = InputFlow.CurrentGameObject.GetComponent<ProBuilderMesh>();
+            if (Mesh != null)
             {
-                bool isMatch = false;
-                var normal = Math.Normal(InputFlow.Mesh, face);
-                if (FaceSelector == Selector.Horizontal)
+                List<Face> selectedFaces = new List<Face>();
+                foreach (Face face in Mesh.faces)
                 {
-                    if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) >= System.Math.Cos(11.25 / 180.0 * System.Math.PI))
+                    bool isMatch = false;
+                    var normal = Math.Normal(Mesh, face);
+                    if (FaceSelector == Selector.Horizontal)
                     {
-                        isMatch = true;
+                        if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) >= System.Math.Cos(11.25 / 180.0 * System.Math.PI))
+                        {
+                            isMatch = true;
+                        }
                     }
-                }
-                else if (FaceSelector == Selector.Vertical)
-                {
-                    if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) < System.Math.Cos(78.75 / 180.0 * System.Math.PI))
+                    else if (FaceSelector == Selector.Vertical)
                     {
-                        isMatch = true;
+                        if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) < System.Math.Cos(78.75 / 180.0 * System.Math.PI))
+                        {
+                            isMatch = true;
+                        }
                     }
-                }
-                else if (FaceSelector == Selector.Left)
-                {
-                    if (normal.x < 0.0 && Mathf.Abs(normal.x) >= Mathf.Abs(normal.y) &&
-                        Mathf.Abs(normal.x) > Mathf.Abs(normal.z))
+                    else if (FaceSelector == Selector.Left)
                     {
-                        isMatch = true;
+                        if (normal.x < 0.0 && Mathf.Abs(normal.x) >= Mathf.Abs(normal.y) &&
+                            Mathf.Abs(normal.x) > Mathf.Abs(normal.z))
+                        {
+                            isMatch = true;
+                        }
                     }
-                }
-                else if (FaceSelector == Selector.Right)
-                {
-                    if (normal.x > 0.0 && Mathf.Abs(normal.x) >= Mathf.Abs(normal.y) &&
-                        Mathf.Abs(normal.x) > Mathf.Abs(normal.z))
+                    else if (FaceSelector == Selector.Right)
                     {
-                        isMatch = true;
+                        if (normal.x > 0.0 && Mathf.Abs(normal.x) >= Mathf.Abs(normal.y) &&
+                            Mathf.Abs(normal.x) > Mathf.Abs(normal.z))
+                        {
+                            isMatch = true;
+                        }
                     }
-                }
-                else if (FaceSelector == Selector.Bottom)
-                {
-                    if (normal.y < 0.0 && Mathf.Abs(normal.y) >= Mathf.Abs(normal.z) &&
-                        Mathf.Abs(normal.y) > Mathf.Abs(normal.x))
+                    else if (FaceSelector == Selector.Bottom)
                     {
-                        isMatch = true;
+                        if (normal.y < 0.0 && Mathf.Abs(normal.y) >= Mathf.Abs(normal.z) &&
+                            Mathf.Abs(normal.y) > Mathf.Abs(normal.x))
+                        {
+                            isMatch = true;
+                        }
                     }
-                }
-                else if (FaceSelector == Selector.Top)
-                {
-                    if (normal.y > 0.0 && Mathf.Abs(normal.y) >= Mathf.Abs(normal.z) &&
-                        Mathf.Abs(normal.y) > Mathf.Abs(normal.x))
+                    else if (FaceSelector == Selector.Top)
                     {
-                        isMatch = true;
+                        if (normal.y > 0.0 && Mathf.Abs(normal.y) >= Mathf.Abs(normal.z) &&
+                            Mathf.Abs(normal.y) > Mathf.Abs(normal.x))
+                        {
+                            isMatch = true;
+                        }
                     }
-                }
-                else if (FaceSelector == Selector.Back)
-                {
-                    if (normal.z < 0.0 && Mathf.Abs(normal.z) >= Mathf.Abs(normal.x) &&
-                        Mathf.Abs(normal.z) > Mathf.Abs(normal.y))
+                    else if (FaceSelector == Selector.Back)
                     {
-                        isMatch = true;
+                        if (normal.z < 0.0 && Mathf.Abs(normal.z) >= Mathf.Abs(normal.x) &&
+                            Mathf.Abs(normal.z) > Mathf.Abs(normal.y))
+                        {
+                            isMatch = true;
+                        }
                     }
-                }
-                else if (FaceSelector == Selector.Front)
-                {
-                    if (normal.z > 0.0 && Mathf.Abs(normal.z) >= Mathf.Abs(normal.x) &&
-                        Mathf.Abs(normal.z) > Mathf.Abs(normal.y))
+                    else if (FaceSelector == Selector.Front)
                     {
-                        isMatch = true;
+                        if (normal.z > 0.0 && Mathf.Abs(normal.z) >= Mathf.Abs(normal.x) &&
+                            Mathf.Abs(normal.z) > Mathf.Abs(normal.y))
+                        {
+                            isMatch = true;
+                        }
+                    }
+
+                    if (isMatch)
+                    {
+                        selectedFaces.Add(face);
                     }
                 }
 
-                if (isMatch)
-                {
-                    selectedFaces.Add(face);
-                }
+                List<Face> detachedFaces = Mesh.DetachFaces(selectedFaces);
+                ProBuilderMesh newMesh = ProBuilderMesh.Create(Mesh.positions, detachedFaces);
+                OutputFlow = new GraphFlow(ObjectName, newMesh.gameObject, InputFlow.CurrentGameObject.transform);
+
+                newMesh.ToMesh();
+                newMesh.Refresh();
+
+                Mesh.ToMesh();
+                Mesh.Refresh();
+
+                OtherOutputFlow = InputFlow;
             }
-
-            List<Face> detachedFaces = InputFlow.Mesh.DetachFaces(selectedFaces);
-
-            if (OutputFlow != null)
-            {
-                UnityEngine.Object.DestroyImmediate(OutputFlow.CurrentGameObject);
-            }
-
-
-            OutputFlow = new GeometryFlow();
-            OutputFlow.Mesh = ProBuilderMesh.Create(InputFlow.Mesh.positions, detachedFaces);
-
-            if (NewObjectParent == SpawnLevel.Child)
-            {
-                OutputFlow.CurrentGameObject = OutputFlow.Mesh.gameObject;
-            }
-            else
-            {
-                OutputFlow.CurrentGameObject = InputFlow.CurrentGameObject;
-            }
-
-            OutputFlow.Mesh.transform.parent = InputFlow.CurrentGameObject.transform;
-
-
-
-
-            OutputFlow.Mesh.ToMesh();
-            OutputFlow.Mesh.Refresh();
-
-            InputFlow.Mesh.ToMesh();
-            InputFlow.Mesh.Refresh();
-
-            OtherOutputFlow = InputFlow;
         }
     }
 

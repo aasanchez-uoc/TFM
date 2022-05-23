@@ -16,4 +16,13 @@ public class GraphFlow
     {
         
     }
+
+    public GraphFlow(string Name, GameObject go, Transform parent)
+    {
+        CurrentGameObject = go;
+        CurrentGameObject.transform.parent = parent;
+        CurrentGameObject.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentGameObject.transform.localScale = new Vector3(1, 1, 1);
+        CurrentGameObject.name = Name;
+    }
 }

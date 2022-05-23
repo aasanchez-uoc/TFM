@@ -108,8 +108,10 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
                         if(port.GetEdges().Count > 1)
                         {
                             multiFlow = true;
-                            List<BaseNode> depNodes = GetNodeDependencies(node, false);
+                            //List<BaseNode> depNodes = GetNodeDependencies(node, false);
+                            List<BaseNode> depNodes = new List<BaseNode>();
                             depNodes.Add(node);
+
                             var edges = port.GetEdges();
                             for (int i = 0; i < edges.Count; i++)
                             {
@@ -198,33 +200,30 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
             if (!loopLevel.TryGetValue(node, out int currLevel)) currLevel = 0;
             if (currLevel != maxLoopLevel)
             {
+                flowNode.inputPorts.PullDatas();
                 if (flowNode.CountInputsOnEdge(index) > 1)
                 {
                     //flowNode.
                     int n = flowNode.CountInputsOnEdge(index);
                     for(int i = 1; i < n; i++)
                     {
-                        flowNode.Process(index, i);
+                        flowNode.OnProcess(index, i);
                         ProcessNodeFromInput(flowNode);
                     }
-
                 }
 
                 flowNode.OnProcess(index);
                 if (info.MultiFlowNodes.ContainsKey(node))
                 {
-                    info.MultiFlowNodes.TryGetValue(node, out MultiFlowInfo nodeInfo);
-                    foreach (BaseNode subNode in nodeInfo.DependentNodes)
-                    {
-                        loopLevel[subNode] = currLevel + 1;
-                        ProcessNode(subNode, nodeInfo.index, loopLevel);
-                        loopLevel[subNode] = currLevel;
-                    }
+                    ProcessNodeFromInput(flowNode);
+                    //info.MultiFlowNodes.TryGetValue(node, out MultiFlowInfo nodeInfo);
+                    //foreach (BaseNode subNode in nodeInfo.DependentNodes)
+                    //{
+                    //    loopLevel[subNode] = currLevel + 1;
+                    //    ProcessNode(subNode, nodeInfo.index, loopLevel);
+                    //    loopLevel[subNode] = currLevel;
+                    //}
                 }
-
-
-
-
             }
         }
         else
@@ -237,13 +236,62 @@ public class ProceduralGraphProcessor : BaseGraphProcessor , IDisposable
     public void ProcessNodeFromInput(BaseFlowNode node)
     {
         List<BaseNode> depNodes = node.GetOutputNodes().ToList();
-        foreach (BaseNode depNode in depNodes)
+        //foreach (BaseNode depNode in depNodes)
+        //{
+        //    if (depNode is BaseFlowNode depFlowNode)
+        //    {
+        //        if (node.OutputFlow is GraphFlow singleFlow)
+        //        {
+        //            depFlowNode.Process(singleFlow);
+        //            ProcessNodeFromInput(depFlowNode);
+        //        }
+        //        else if (node.OutputFlow is IEnumerable<GraphFlow> multiFlow)
+        //        {
+        //            foreach (GraphFlow flow in multiFlow)
+        //            {
+        //                depFlowNode.Process(flow);
+        //                ProcessNodeFromInput(depFlowNode);
+        //            }
+        //        }
+        //    }
+        //}
+        node.outputPorts.PushDatas();
+        foreach (var port in node.outputPorts)
         {
-            if (depNode is BaseFlowNode depFlowNode)
+            if( typeof(GraphFlow).IsAssignableFrom(port.fieldInfo.FieldType))
             {
-                depFlowNode.Process(node.OutputFlow);
-                ProcessNodeFromInput(depFlowNode);
+                foreach (var edge in port.GetEdges())
+                {
+                    if(edge.inputNode is BaseFlowNode depFlowNode)
+                    {
+                        GraphFlow flow = (GraphFlow) edge.passThroughBuffer;
+                        depFlowNode.Process(flow);
+                        ProcessNodeFromInput(depFlowNode);
+                    }
+
+                }
             }
+
+            if (typeof(IEnumerable<GraphFlow>).IsAssignableFrom(port.fieldInfo.FieldType))
+            {
+                foreach (var edge in port.GetEdges())
+                {
+                    if (edge.inputNode is BaseFlowNode depFlowNode)
+                    {
+                        List<GraphFlow> multiFlow = (List<GraphFlow>)edge.passThroughBuffer;
+                        foreach (GraphFlow flow in multiFlow)
+                        {
+                            depFlowNode.Process(flow);
+                            ProcessNodeFromInput(depFlowNode);
+                        }
+                    }
+
+                }
+
+            }
+
+
         }
+
     }
 }

@@ -18,11 +18,11 @@ public class RandomFloatStepNode : ProceduralNode
 	[Output("Out")]
 	public float o;
 
-
+	private System.Random random = new System.Random();
 	protected override void Process()
 	{
 		int options = (int)System.Math.Ceiling((max - min) / step + 1);
-		System.Random random = new System.Random();
+
 		float value = random.Next(0, options) * step + min;
 		o = (float)(Mathf.Clamp(value, min, max));
 	}

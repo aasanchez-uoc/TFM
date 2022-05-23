@@ -27,69 +27,11 @@ MonoBehaviour:
   - id: 10
   - id: 11
   - id: 12
-  - id: 13
-  - id: 14
   edges:
-  - GUID: ab2f5915-403a-43bb-8d6d-971e92fabe43
-    owner: {fileID: 11400000}
-    inputNodeGUID: 0f212c94-39a7-4004-91bb-705fd3700b1d
-    outputNodeGUID: 7f0cbb63-e210-4f63-b7ea-3beb0038c197
-    inputFieldName: InputFlows
-    outputFieldName: StartFlow
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 3031e999-f42b-4ad7-9df8-3f54f35baf94
-    owner: {fileID: 11400000}
-    inputNodeGUID: 0441df89-6b2d-403a-ba95-e340b9c15923
-    outputNodeGUID: 0f212c94-39a7-4004-91bb-705fd3700b1d
-    inputFieldName: InputFlows
-    outputFieldName: OutputFlow
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 5817c0e4-70a2-4ee7-80cb-947c27d8a2e1
-    owner: {fileID: 11400000}
-    inputNodeGUID: bf9d55a0-6c89-4ee3-bfbe-909dfeb2b817
-    outputNodeGUID: 0441df89-6b2d-403a-ba95-e340b9c15923
-    inputFieldName: InputFlows
-    outputFieldName: OutputFlow
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 700ee398-7f2a-4b79-85c0-6e6c7eddf674
-    owner: {fileID: 11400000}
-    inputNodeGUID: ae760a6f-f4a9-4910-a810-28b328579d02
-    outputNodeGUID: bf9d55a0-6c89-4ee3-bfbe-909dfeb2b817
-    inputFieldName: InputFlows
-    outputFieldName: OutputFlow
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 59a5035f-2f51-49ba-b864-da780bdbc382
-    owner: {fileID: 11400000}
-    inputNodeGUID: b10734f3-d03b-4ced-8ee3-93345aded9a1
-    outputNodeGUID: ae760a6f-f4a9-4910-a810-28b328579d02
-    inputFieldName: InputFlows
-    outputFieldName: OutputFlow
-    inputPortIdentifier: 
-    outputPortIdentifier: 
   - GUID: 3cbeb388-e768-4ebe-883a-5f7012fa3be0
     owner: {fileID: 11400000}
     inputNodeGUID: b10734f3-d03b-4ced-8ee3-93345aded9a1
     outputNodeGUID: c6aaa777-4fea-48aa-8608-8574a1ef8288
-    inputFieldName: InputMaterial
-    outputFieldName: OutputMaterial
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 95b6e459-51c2-436c-b969-1573a236eee2
-    owner: {fileID: 11400000}
-    inputNodeGUID: 02e11e2e-cd03-4f74-8d04-dcfa99731ab5
-    outputNodeGUID: bf9d55a0-6c89-4ee3-bfbe-909dfeb2b817
-    inputFieldName: InputFlows
-    outputFieldName: OtherOutputFlow
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 4b4af11f-384f-41b3-ab52-cf1541956d82
-    owner: {fileID: 11400000}
-    inputNodeGUID: 02e11e2e-cd03-4f74-8d04-dcfa99731ab5
-    outputNodeGUID: 1f4d982f-4e9f-4cb7-8049-91866c525324
     inputFieldName: InputMaterial
     outputFieldName: OutputMaterial
     inputPortIdentifier: 
@@ -110,36 +52,60 @@ MonoBehaviour:
     outputFieldName: output
     inputPortIdentifier: 
     outputPortIdentifier: output
-  - GUID: ad018e86-35f8-4b52-974f-401adccfbfd4
+  - GUID: ef4f6b7d-455a-4c92-a976-849360ff47ff
     owner: {fileID: 11400000}
-    inputNodeGUID: 00ce446e-4a60-441c-8b64-436c1487b8c1
-    outputNodeGUID: b10734f3-d03b-4ced-8ee3-93345aded9a1
+    inputNodeGUID: 55224212-9408-4f34-983c-757aa81e45ad
+    outputNodeGUID: 17f4ed6f-f719-4683-ad89-9da2ddc31a47
     inputFieldName: InputFlows
     outputFieldName: OutputFlow
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: 64494bcc-bb24-488a-8612-f63a089d7e66
+  - GUID: 950901a6-cc8e-439f-9f66-7a9265b9d79b
     owner: {fileID: 11400000}
-    inputNodeGUID: 0f212c94-39a7-4004-91bb-705fd3700b1d
-    outputNodeGUID: e169dab8-a44c-484f-b435-335a7b1bee1b
-    inputFieldName: Width
-    outputFieldName: o
+    inputNodeGUID: ebdf798c-4a25-4490-92ee-594de0b4eb4f
+    outputNodeGUID: 55224212-9408-4f34-983c-757aa81e45ad
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: 06846439-ae10-4b5d-8f63-3fe9a83d7dcd
+  - GUID: d7817048-4580-42bc-8685-90cc6bcd8ab4
     owner: {fileID: 11400000}
-    inputNodeGUID: 0f212c94-39a7-4004-91bb-705fd3700b1d
-    outputNodeGUID: bba778e9-4a8c-46fc-8857-2c7779fdedae
-    inputFieldName: Height
-    outputFieldName: o
+    inputNodeGUID: c3d2f261-0fa0-46be-a49c-904a0c1cf0c2
+    outputNodeGUID: ebdf798c-4a25-4490-92ee-594de0b4eb4f
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: 25059a00-39bf-4c16-a15e-cb04f06dd67f
+  - GUID: 9a7e3780-a746-4bfe-bafa-290ecfbb561b
     owner: {fileID: 11400000}
-    inputNodeGUID: 0441df89-6b2d-403a-ba95-e340b9c15923
+    inputNodeGUID: 55224212-9408-4f34-983c-757aa81e45ad
     outputNodeGUID: 7287df1f-8206-48c8-a060-657504e7f75c
     inputFieldName: Height
     outputFieldName: o
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 584b83ab-8c99-47d0-8559-81c84b16e82e
+    owner: {fileID: 11400000}
+    inputNodeGUID: b10734f3-d03b-4ced-8ee3-93345aded9a1
+    outputNodeGUID: c3d2f261-0fa0-46be-a49c-904a0c1cf0c2
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 3d7f6ac1-09e4-418e-bab0-060665474afa
+    owner: {fileID: 11400000}
+    inputNodeGUID: 02e11e2e-cd03-4f74-8d04-dcfa99731ab5
+    outputNodeGUID: ebdf798c-4a25-4490-92ee-594de0b4eb4f
+    inputFieldName: InputFlows
+    outputFieldName: OtherOutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: ce2a0da2-b3eb-44bb-9664-f13273cfa2c4
+    owner: {fileID: 11400000}
+    inputNodeGUID: 17f4ed6f-f719-4683-ad89-9da2ddc31a47
+    outputNodeGUID: 78c5b95c-b9c5-446d-98f8-88eebb3c57fa
+    inputFieldName: InputFlows
+    outputFieldName: StartFlow
     inputPortIdentifier: 
     outputPortIdentifier: 
   groups: []
@@ -147,22 +113,22 @@ MonoBehaviour:
   pinnedElements:
   - position:
       serializedVersion: 2
-      x: 26
-      y: 74
-      width: 434
-      height: 228
+      x: 0
+      y: -35.599976
+      width: 382
+      height: 338
     opened: 0
     editorType:
       serializedType: ProceduralParameterView, Assembly-CSharp-Editor, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   exposedParameters:
-  - id: 15
-  - id: 16
+  - id: 13
+  - id: 14
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 105, y: -134, z: 0}
-  scale: {x: 1.3225, y: 1.3225, z: 1}
+  position: {x: 271.2, y: -39.2, z: 0}
+  scale: {x: 0.7561437, y: 0.7561437, z: 1}
   showParameterView: 0
   references:
     version: 1
@@ -171,7 +137,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 00ce446e-4a60-441c-8b64-436c1487b8c1
-        computeOrder: 11
+        computeOrder: 0
         position:
           serializedVersion: 2
           x: 1843.2783
@@ -182,164 +148,11 @@ MonoBehaviour:
         debug: 0
         nodeLock: 0
     00000001:
-      type: {class: InputNode, ns: , asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 7f0cbb63-e210-4f63-b7ea-3beb0038c197
-        computeOrder: 5
-        position:
-          serializedVersion: 2
-          x: 78.56
-          y: 162.4
-          width: 101.59999
-          height: 74.40001
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-    00000002:
-      type: {class: PlaneNode, ns: , asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 0f212c94-39a7-4004-91bb-705fd3700b1d
-        computeOrder: 6
-        position:
-          serializedVersion: 2
-          x: 290.2
-          y: 162.4
-          width: 197.6
-          height: 171.2
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        Width: 2.2036695
-        Height: 1.565638
-        WidthCuts: 0
-        HeightCuts: 0
-    00000003:
-      type: {class: Extrude, ns: , asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 0441df89-6b2d-403a-ba95-e340b9c15923
-        computeOrder: 7
-        position:
-          serializedVersion: 2
-          x: 578.2
-          y: 162.40001
-          width: 272.8
-          height: 118.399994
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        Height: 2.9140947
-        ExtrudedFaces:
-        - m_Indexes: 000000000100000002000000010000000300000002000000
-          m_SmoothingGroup: 0
-          m_Uv:
-            m_UseWorldSpace: 0
-            m_FlipU: 0
-            m_FlipV: 0
-            m_SwapUV: 0
-            m_Fill: 1
-            m_Scale: {x: 1, y: 1}
-            m_Offset: {x: 0, y: 0}
-            m_Rotation: 0
-            m_Anchor: 9
-          m_Material: {fileID: 0}
-          m_SubmeshIndex: 0
-          m_ManualUV: 0
-          elementGroup: -1
-          m_TextureGroup: -1
-        - m_Indexes: 040000000500000006000000050000000700000006000000
-          m_SmoothingGroup: 0
-          m_Uv:
-            m_UseWorldSpace: 0
-            m_FlipU: 0
-            m_FlipV: 0
-            m_SwapUV: 0
-            m_Fill: 1
-            m_Scale: {x: 1, y: 1}
-            m_Offset: {x: 0, y: 0}
-            m_Rotation: 0
-            m_Anchor: 9
-          m_Material: {fileID: 0}
-          m_SubmeshIndex: 0
-          m_ManualUV: 0
-          elementGroup: -1
-          m_TextureGroup: -1
-        - m_Indexes: 08000000090000000a000000090000000b0000000a000000
-          m_SmoothingGroup: 0
-          m_Uv:
-            m_UseWorldSpace: 0
-            m_FlipU: 0
-            m_FlipV: 0
-            m_SwapUV: 0
-            m_Fill: 1
-            m_Scale: {x: 1, y: 1}
-            m_Offset: {x: 0, y: 0}
-            m_Rotation: 0
-            m_Anchor: 9
-          m_Material: {fileID: 0}
-          m_SubmeshIndex: 0
-          m_ManualUV: 0
-          elementGroup: -1
-          m_TextureGroup: -1
-        - m_Indexes: 0c0000000d0000000e0000000d0000000f0000000e000000
-          m_SmoothingGroup: 0
-          m_Uv:
-            m_UseWorldSpace: 0
-            m_FlipU: 0
-            m_FlipV: 0
-            m_SwapUV: 0
-            m_Fill: 1
-            m_Scale: {x: 1, y: 1}
-            m_Offset: {x: 0, y: 0}
-            m_Rotation: 0
-            m_Anchor: 9
-          m_Material: {fileID: 0}
-          m_SubmeshIndex: 0
-          m_ManualUV: 0
-          elementGroup: -1
-          m_TextureGroup: -1
-        extrudeMethod: 0
-    00000004:
-      type: {class: SplitFace, ns: , asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: bf9d55a0-6c89-4ee3-bfbe-909dfeb2b817
-        computeOrder: 8
-        position:
-          serializedVersion: 2
-          x: 910.80005
-          y: 162.40001
-          width: 226.39996
-          height: 138.4
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        FaceSelector: 4
-        NewObjectParent: 0
-    00000005:
-      type: {class: BasicRoof, ns: , asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: ae760a6f-f4a9-4910-a810-28b328579d02
-        computeOrder: 9
-        position:
-          serializedVersion: 2
-          x: 1210.6
-          y: 176.80002
-          width: 197.59998
-          height: 99.20001
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        Height: 0.5
-    00000006:
       type: {class: SetMaterialNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: b10734f3-d03b-4ced-8ee3-93345aded9a1
-        computeOrder: 10
+        computeOrder: 9
         position:
           serializedVersion: 2
           x: 1487
@@ -350,12 +163,12 @@ MonoBehaviour:
         debug: 0
         nodeLock: 0
         InputMaterial: {fileID: 0}
-    00000007:
+    00000002:
       type: {class: StandardMaterialNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: c6aaa777-4fea-48aa-8608-8574a1ef8288
-        computeOrder: 1
+        computeOrder: 2
         position:
           serializedVersion: 2
           x: 1211.4
@@ -367,12 +180,12 @@ MonoBehaviour:
         nodeLock: 0
         MaterialColor: {r: 0.745283, g: 0.26249084, b: 0, a: 0}
         OutputMaterial: {fileID: 0}
-    00000008:
+    00000003:
       type: {class: SetMaterialNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: 02e11e2e-cd03-4f74-8d04-dcfa99731ab5
-        computeOrder: 14
+        computeOrder: 10
         position:
           serializedVersion: 2
           x: 854.3463
@@ -383,12 +196,12 @@ MonoBehaviour:
         debug: 0
         nodeLock: 0
         InputMaterial: {fileID: 0}
-    00000009:
+    00000004:
       type: {class: StandardMaterialNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: 1f4d982f-4e9f-4cb7-8049-91866c525324
-        computeOrder: 13
+        computeOrder: 12
         position:
           serializedVersion: 2
           x: 538.3463
@@ -400,12 +213,12 @@ MonoBehaviour:
         nodeLock: 0
         MaterialColor: {r: 1, g: 1, b: 1, a: 0}
         OutputMaterial: {fileID: 0}
-    0000000A:
+    00000005:
       type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
         nodeCustomName: 
         GUID: 05476d1b-be4a-47a9-8c3b-7fb99e794957
-        computeOrder: 0
+        computeOrder: 1
         position:
           serializedVersion: 2
           x: 1146.2986
@@ -417,12 +230,12 @@ MonoBehaviour:
         nodeLock: 0
         parameterGUID: 699c2bdf-4d95-4bb3-963f-7dd9dd62fb3c
         accessor: 0
-    0000000B:
+    00000006:
       type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
         nodeCustomName: 
         GUID: 90eabbcf-73ef-41b6-8192-b144909c46d6
-        computeOrder: 12
+        computeOrder: 11
         position:
           serializedVersion: 2
           x: 357.49686
@@ -434,48 +247,12 @@ MonoBehaviour:
         nodeLock: 0
         parameterGUID: fd7963d1-03ec-4365-bb41-52ef68d6b335
         accessor: 0
-    0000000C:
-      type: {class: RandomFloatNode, ns: , asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: e169dab8-a44c-484f-b435-335a7b1bee1b
-        computeOrder: 4
-        position:
-          serializedVersion: 2
-          x: -61.051094
-          y: 253.49998
-          width: 147
-          height: 99
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        min: 0.8
-        max: 3
-        o: 2.2036695
-    0000000D:
-      type: {class: RandomFloatNode, ns: , asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: bba778e9-4a8c-46fc-8857-2c7779fdedae
-        computeOrder: 3
-        position:
-          serializedVersion: 2
-          x: -61.000004
-          y: 371
-          width: 147
-          height: 99
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        min: 0.8
-        max: 2
-        o: 1.565638
-    0000000E:
+    00000007:
       type: {class: RandomFloatNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: 7287df1f-8206-48c8-a060-657504e7f75c
-        computeOrder: 2
+        computeOrder: 3
         position:
           serializedVersion: 2
           x: 450.3365
@@ -485,10 +262,95 @@ MonoBehaviour:
         expanded: 0
         debug: 0
         nodeLock: 0
-        min: 1
-        max: 4
-        o: 2.9140947
-    0000000F:
+        min: 0.1
+        max: 1
+        o: 0.29793268
+    00000008:
+      type: {class: RandomConvexPolyNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 17f4ed6f-f719-4683-ad89-9da2ddc31a47
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 216.79996
+          y: 153.60002
+          width: 235.2
+          height: 146.40001
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        MaxWidth: 2
+        MaxHeight: 2
+        NumberOfVertices: 4
+        ObjectName: Convex Polygon
+    00000009:
+      type: {class: Extrude, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 55224212-9408-4f34-983c-757aa81e45ad
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 578.4
+          y: -16.255554
+          width: 272.8
+          height: 119.2
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Height: 0.29793268
+        extrudeMethod: 0
+    0000000A:
+      type: {class: SplitFace, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: ebdf798c-4a25-4490-92ee-594de0b4eb4f
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 911.2001
+          y: -16.800007
+          width: 226.39996
+          height: 138.40001
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        FaceSelector: 4
+        NewObjectParent: 0
+        ObjectName: Split Face
+    0000000B:
+      type: {class: BasicRoof, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: c3d2f261-0fa0-46be-a49c-904a0c1cf0c2
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 1211.2
+          y: 3.2000046
+          width: 196.80005
+          height: 99.2
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Height: 0.5
+    0000000C:
+      type: {class: InputNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 78c5b95c-b9c5-446d-98f8-88eebb3c57fa
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 0
+          y: 100
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    0000000D:
       type: {class: ColorParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
         guid: 699c2bdf-4d95-4bb3-963f-7dd9dd62fb3c
@@ -500,9 +362,9 @@ MonoBehaviour:
           serializedValue: 
         input: 1
         settings:
-          id: 17
+          id: 15
         val: {r: 0.745283, g: 0.26249084, b: 0, a: 0}
-    00000010:
+    0000000E:
       type: {class: ColorParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
         guid: fd7963d1-03ec-4365-bb41-52ef68d6b335
@@ -514,16 +376,16 @@ MonoBehaviour:
           serializedValue: 
         input: 1
         settings:
-          id: 18
+          id: 16
         val: {r: 1, g: 1, b: 1, a: 0}
-    00000011:
+    0000000F:
       type: {class: ColorParameter/ColorSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
         isHidden: 0
         expanded: 1
         guid: 699c2bdf-4d95-4bb3-963f-7dd9dd62fb3c
         mode: 0
-    00000012:
+    00000010:
       type: {class: ColorParameter/ColorSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
         isHidden: 0

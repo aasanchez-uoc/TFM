@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2552acd5b2e1a2f4c842a872ae87b7f7, type: 3}
+  m_Name: test2
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  edges:
+  - GUID: a8d790c3-1cce-4c73-8e66-3f5437a372c6
+    owner: {fileID: 11400000}
+    inputNodeGUID: 6d3a7692-5e7d-4d74-ba91-56e80b2e4da3
+    outputNodeGUID: b9beebb3-c290-4492-90eb-117ef1101d1a
+    inputFieldName: InputFlows
+    outputFieldName: StartFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 7e928369-3b17-486d-9c85-03cec4fdbd7d
+    owner: {fileID: 11400000}
+    inputNodeGUID: 97ffb4da-26b5-4238-ae9f-775bd9018967
+    outputNodeGUID: 6d3a7692-5e7d-4d74-ba91-56e80b2e4da3
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 4b3acd57-0c4e-4f39-b6b7-35270f332771
+    owner: {fileID: 11400000}
+    inputNodeGUID: 97ffb4da-26b5-4238-ae9f-775bd9018967
+    outputNodeGUID: 11b0c3ce-61cc-4536-a109-40ad72e4e3e0
+    inputFieldName: InputMaterial
+    outputFieldName: OutputMaterial
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 30bf7ee1-53e0-4cdf-b76e-79f26bf6adcb
+    owner: {fileID: 11400000}
+    inputNodeGUID: 4efb63f0-6aae-4e1c-81bb-87a613cf7f7a
+    outputNodeGUID: 97ffb4da-26b5-4238-ae9f-775bd9018967
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements: []
+  exposedParameters: []
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: 172.8, y: -25.6, z: 0}
+  scale: {x: 0.43232757, y: 0.43232757, z: 1}
+  showParameterView: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: OutputNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: e201d6d4-3576-4357-a576-44ec7df0bf3a
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 883.9275
+          y: 90.40001
+          width: 112
+          height: 75.200005
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    00000001:
+      type: {class: InputNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: b9beebb3-c290-4492-90eb-117ef1101d1a
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 0
+          y: 100
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    00000002:
+      type: {class: PlaneNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 6d3a7692-5e7d-4d74-ba91-56e80b2e4da3
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 177.20001
+          y: 79.2
+          width: 203.19998
+          height: 192
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Width: 10
+        Height: 10
+        WidthCuts: 0
+        HeightCuts: 0
+        ObjectName: Plane
+    00000003:
+      type: {class: SetMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 97ffb4da-26b5-4238-ae9f-775bd9018967
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 442.773
+          y: 165.577
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        InputMaterial: {fileID: 0}
+    00000004:
+      type: {class: StandardMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 11b0c3ce-61cc-4536-a109-40ad72e4e3e0
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 102.399994
+          y: 416.71146
+          width: 231.20001
+          height: 75.19998
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        MaterialColor: {r: 0.29507735, g: 0.6792453, b: 0.22043431, a: 0}
+        OutputMaterial: {fileID: 0}
+    00000005:
+      type: {class: GraphNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: p2
+        GUID: 4efb63f0-6aae-4e1c-81bb-87a613cf7f7a
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 713.8783
+          y: 165.59999
+          width: 197.60004
+          height: 75.20001
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        subGraphAsset: {fileID: 11400000, guid: 55ec056d3989cfb49916bd4475b1e7c1, type: 2}

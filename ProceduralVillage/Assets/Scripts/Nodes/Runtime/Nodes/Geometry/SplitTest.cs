@@ -8,10 +8,10 @@ using UnityEngine.ProBuilder;
 using UnityEngine.ProBuilder.MeshOperations;
 
 [System.Serializable, NodeMenuItem("Geometry/Transformations/SplitTest")]
-public class SplitTest : GeometryFlowBaseNode
+public class SplitTest : BaseFlowNode
 {
     [Output("Selected Faces", allowMultiple = false)]
-    public new GeometryFlow OutputFlow;
+    public new GraphFlow OutputFlow;
 
     public SplitDirection splitDirection;
 
@@ -19,15 +19,18 @@ public class SplitTest : GeometryFlowBaseNode
     Dictionary<Edge, SplitSide> edgeSides;
     Dictionary<Face, SplitSide> faceSides;
 
-    public override void Process(GraphFlow inputflow)
+    public override void Process(GraphFlow InputFlow)
     {
-        GeometryFlow InputFlow = inputflow as GeometryFlow;
-        if (InputFlow?.CurrentGameObject != null && InputFlow.Mesh != null)
+        if (InputFlow?.CurrentGameObject != null)
         {
-            ApplySplit(splitDirection, InputFlow.Mesh);
-            OutputFlow = InputFlow;
-            OutputFlow.Mesh.ToMesh();
-            OutputFlow.Mesh.Refresh();
+            ProBuilderMesh Mesh = InputFlow.CurrentGameObject.GetComponent<ProBuilderMesh>();
+            if (Mesh != null)
+            {
+                ApplySplit(splitDirection, Mesh);
+                OutputFlow = InputFlow;
+                Mesh.ToMesh();
+                Mesh.Refresh();
+            }
         }
     }
 
@@ -77,9 +80,9 @@ public class SplitTest : GeometryFlowBaseNode
         ////Face classification
         foreach (Face face in mesh.faces)
         {
-            bool isOn = true;
-            bool isAbove = true;
-            bool isBelow = true;
+            //bool isOn = true;
+            //bool isAbove = true;
+            //bool isBelow = true;
             foreach (Edge edge in face.edges)
             {
                 UpdateEdgeClassification(mesh, edge);
@@ -87,19 +90,19 @@ public class SplitTest : GeometryFlowBaseNode
                 {
                     if (side == SplitSide.above)
                     {
-                        isOn = false;
-                        isBelow = false;
+                        //isOn = false;
+                        //isBelow = false;
                     }
                     else if (side == SplitSide.below)
                     {
-                        isOn = false;
-                        isAbove = false;
+                        //isOn = false;
+                        //isAbove = false;
                     }
                     else if (side == SplitSide.intersect || side == SplitSide.on)
                     {
-                        isOn = false;
-                        isBelow = false;
-                        isAbove = false;
+                        //isOn = false;
+                        //isBelow = false;
+                        //isAbove = false;
                         edgesToSplit.Add(edge);
                     }                  
 

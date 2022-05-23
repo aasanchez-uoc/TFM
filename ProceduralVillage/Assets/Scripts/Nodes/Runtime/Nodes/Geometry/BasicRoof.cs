@@ -10,74 +10,74 @@ using UnityEngine.ProBuilder.MeshOperations;
 
 [System.Serializable, NodeMenuItem("Geometry/Transformations/Basic Roof")]
 
-public class BasicRoof : GeometryFlowBaseNode
+public class BasicRoof : BaseFlowNode
 {
 
     [Input, ShowAsDrawer]
     public float Height = 1;
 
-    [Output("Output flow", allowMultiple = false)]
-    public new GeometryFlow OutputFlow;
 
-
-    public override void Process(GraphFlow inputflow)
+    public override void Process(GraphFlow InputFlow)
     {
-        GeometryFlow InputFlow = inputflow as GeometryFlow;
         if (InputFlow?.CurrentGameObject != null)
         {
-            List<Vector3> meshVertices = new List<Vector3>();
-            List<Face> meshFaces = new List<Face>();
-
-            foreach (Face face in InputFlow.Mesh.faces)
+            ProBuilderMesh Mesh = InputFlow.CurrentGameObject.GetComponent<ProBuilderMesh>();
+            if (Mesh != null)
             {
-                HashSet<Vertex> originalFaceVertices = new HashSet<Vertex>();
-                var edges = WingedEdge.SortEdgesByAdjacency(face);
+                List<Vector3> meshVertices = new List<Vector3>();
+                List<Face> meshFaces = new List<Face>();
 
-                foreach (Edge edge in edges)
+                foreach (Face face in Mesh.faces)
                 {
-                    originalFaceVertices.UnionWith(InputFlow.Mesh.GetVertices(new List<int> { edge.a, edge.b }));
-                }
+                    HashSet<Vertex> originalFaceVertices = new HashSet<Vertex>();
+                    var edges = WingedEdge.SortEdgesByAdjacency(face);
 
-                var poly = new List<StraightSkeletonNet.Primitives.Vector2d>();
-
-                foreach (Vertex vertex in originalFaceVertices)
-                {
-                    var point2d = WorldPointToPlane(vertex.position, face);
-                    poly.Add(new StraightSkeletonNet.Primitives.Vector2d(point2d.x, point2d.y));
-                }
-                Skeleton skeleton = SkeletonBuilder.Build(poly);
-
-                //build new edges and vertices from skeleton
-                HashSet<Vertex> newVertices = new HashSet<Vertex>();
-
-                foreach (EdgeResult edgeResult in skeleton.Edges)
-                {
-                    List<int> faceIndexes = new List<int>();
-                    List<Vector3> faceVertices = new List<Vector3>();
-                    foreach (var v in edgeResult.Polygon)
+                    foreach (Edge edge in edges)
                     {
-                        float extrude = (poly.Contains(v)) ? 0 : Height;
-                        Vector3 vertex = PlanePointToWorld(v, extrude, face, InputFlow.Mesh);
-                        if (!meshVertices.Contains(vertex)) meshVertices.Add(vertex);
-                        faceIndexes.Add(meshVertices.IndexOf(vertex));
-                        faceVertices.Add(vertex);
+                        originalFaceVertices.UnionWith(Mesh.GetVertices(new List<int> { edge.a, edge.b }));
                     }
-                    if (TriangulationUtils.TriangulateVertices(faceVertices.ToArray(), faceIndexes, out List<int> triangles))
+
+                    var poly = new List<StraightSkeletonNet.Primitives.Vector2d>();
+
+                    foreach (Vertex vertex in originalFaceVertices)
                     {
-                        Face f = new Face(triangles);
-                        f.Reverse();
-                        meshFaces.Add(f);
+                        var point2d = WorldPointToPlane(vertex.position, face);
+                        poly.Add(new StraightSkeletonNet.Primitives.Vector2d(point2d.x, point2d.y));
                     }
+                    Skeleton skeleton = SkeletonBuilder.Build(poly);
+
+                    //build new edges and vertices from skeleton
+                    HashSet<Vertex> newVertices = new HashSet<Vertex>();
+
+                    foreach (EdgeResult edgeResult in skeleton.Edges)
+                    {
+                        List<int> faceIndexes = new List<int>();
+                        List<Vector3> faceVertices = new List<Vector3>();
+                        foreach (var v in edgeResult.Polygon)
+                        {
+                            float extrude = (poly.Contains(v)) ? 0 : Height;
+                            Vector3 vertex = PlanePointToWorld(v, extrude, face, Mesh);
+                            if (!meshVertices.Contains(vertex)) meshVertices.Add(vertex);
+                            faceIndexes.Add(meshVertices.IndexOf(vertex));
+                            faceVertices.Add(vertex);
+                        }
+                        if (TriangulationUtils.TriangulateVertices(faceVertices.ToArray(), faceIndexes, out List<int> triangles))
+                        {
+                            Face f = new Face(triangles);
+                            f.Reverse();
+                            meshFaces.Add(f);
+                        }
+                    }
+
                 }
+
+                Mesh.RebuildWithPositionsAndFaces(meshVertices, meshFaces);
+                Mesh.ToTriangles(meshFaces);
+                Mesh.ToMesh();
+                Mesh.Refresh();
+                OutputFlow = InputFlow;
 
             }
-
-            InputFlow.Mesh.RebuildWithPositionsAndFaces(meshVertices, meshFaces);
-            InputFlow.Mesh.ToTriangles(meshFaces);
-            InputFlow.Mesh.ToMesh();
-            InputFlow.Mesh.Refresh();
-            OutputFlow = InputFlow;
-
         }
     }
 

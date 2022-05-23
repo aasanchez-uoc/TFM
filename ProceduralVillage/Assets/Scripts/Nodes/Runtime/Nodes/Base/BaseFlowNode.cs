@@ -15,11 +15,11 @@ public abstract class BaseFlowNode : ProceduralNode
 
 	private List<List<GraphFlow>> flows;
 
-	public void OnProcess(int inputIndex)
+	public void OnProcess(int inputIndex, int subIndex = 0)
 	{
 		inputPorts.PullDatas();
 
-		ExceptionToLog.Call(() => Process(inputIndex));
+		ExceptionToLog.Call(() => Process(inputIndex, subIndex));
 
 		InvokeOnProcessed();
 
@@ -39,8 +39,9 @@ public abstract class BaseFlowNode : ProceduralNode
                 list.Add(flow);
                 flows.Add(new List<GraphFlow>() { flow });
             }
-            if (e.passThroughBuffer is List<GraphFlow> flowList)
+            if (e.passThroughBuffer is IEnumerable<GraphFlow> flowEnum)
             {
+                var flowList = flowEnum.ToList();
                 flows.Add(flowList);
                 list.AddRange(flowList);
             }
@@ -50,7 +51,7 @@ public abstract class BaseFlowNode : ProceduralNode
 
     protected sealed override void Process() => throw new Exception("Do not use");
 
-	public virtual void Process(int inputIndex, int subIndex = 0)
+	protected virtual void Process(int inputIndex, int subIndex)
     {
         if (flows == null || flows.Count <= inputIndex) return;
         List<GraphFlow> list = flows[inputIndex];
@@ -61,7 +62,7 @@ public abstract class BaseFlowNode : ProceduralNode
 
     public virtual int CountInputsOnEdge(int index)
     {
-        if (flows == null) return 0;
+        if (flows == null || flows.Count <= index) return 0;
         return flows[index].Count;
     }
 

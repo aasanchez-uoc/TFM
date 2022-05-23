@@ -3,25 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 [System.Serializable, NodeMenuItem("Geometry/Materials/SetMaterial")]
-public class SetMaterialNode : GeometryFlowBaseNode
+public class SetMaterialNode : BaseFlowNode
 {
     [Input("Input Material")]
     public Material InputMaterial;
 
-    [Output("Output Flow", allowMultiple = false)]
-    public new GeometryFlow OutputFlow;
-
-    public override void Process(GraphFlow inputflow)
+    public override void Process(GraphFlow InputFlow)
     {
-        GeometryFlow InputFlow = inputflow as GeometryFlow;
         if (InputFlow?.CurrentGameObject != null && InputMaterial != null)
         {
-            InputFlow.Mesh.SetMaterial(InputFlow.Mesh.faces, InputMaterial);
-            InputFlow.Mesh.ToMesh();
-            InputFlow.Mesh.Refresh();
-            OutputFlow = InputFlow;
+            ProBuilderMesh Mesh = InputFlow.CurrentGameObject.GetComponent<ProBuilderMesh>();
+            if(Mesh != null)
+            {
+                Mesh.SetMaterial(Mesh.faces, InputMaterial);
+                Mesh.ToMesh();
+                Mesh.Refresh();
+                OutputFlow = InputFlow;
+            }
+
         }
     }
 

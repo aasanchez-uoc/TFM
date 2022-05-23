@@ -135,8 +135,6 @@ public class ProceduralGraphView : BaseGraphView
 
 	public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
 	{
-
-
 		evt.menu.AppendSeparator();
 
 		string[] guids = AssetDatabase.FindAssets("t:ProceduralGraph", null);

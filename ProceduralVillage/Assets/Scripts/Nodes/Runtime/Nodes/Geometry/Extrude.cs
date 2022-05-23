@@ -7,30 +7,27 @@ using UnityEngine.ProBuilder;
 using UnityEngine.ProBuilder.MeshOperations;
 
 [System.Serializable, NodeMenuItem("Geometry/Transformations/Extrude")]
-public class Extrude : GeometryFlowBaseNode
+public class Extrude : BaseFlowNode
 {
 
     [Input, ShowAsDrawer]
-    public float Height = 1;
-
-    [Output("Output flow", allowMultiple = false)]
-    public new GeometryFlow OutputFlow;
-
-    [Output("Extruded faces", allowMultiple = false)]
-    public Face[] ExtrudedFaces;
+    public float Height = 1.0f;
 
     public ExtrudeMethod extrudeMethod = ExtrudeMethod.IndividualFaces;
 
 
-    public override void Process(GraphFlow inputflow)
+    public override void Process(GraphFlow InputFlow)
     {
-        GeometryFlow InputFlow = (GeometryFlow) inputflow ;
         if (InputFlow?.CurrentGameObject != null)
         {
-            ExtrudedFaces = ExtrudeElements.Extrude(InputFlow.Mesh, InputFlow.Mesh.faces, extrudeMethod, Height);
-            InputFlow.Mesh.ToMesh();
-            InputFlow.Mesh.Refresh();
-            OutputFlow = InputFlow;
+            ProBuilderMesh Mesh = InputFlow.CurrentGameObject.GetComponent<ProBuilderMesh>();
+            if (Mesh != null)
+            {
+                var ExtrudedFaces = ExtrudeElements.Extrude(Mesh, Mesh.faces, extrudeMethod, Height);
+                Mesh.ToMesh();
+                Mesh.Refresh();
+                OutputFlow = InputFlow;
+            }
         }
     }
 }
