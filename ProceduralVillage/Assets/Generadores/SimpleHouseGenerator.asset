@@ -1,0 +1,498 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2552acd5b2e1a2f4c842a872ae87b7f7, type: 3}
+  m_Name: SimpleHouseGenerator
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  edges:
+  - GUID: df5d115b-decf-4f95-932b-5d7b7a9cb1de
+    owner: {fileID: 11400000}
+    inputNodeGUID: 6518e3cb-257a-4596-85c5-452bc6b24a77
+    outputNodeGUID: 87d46ea6-e687-435d-87cc-92ef50f93b42
+    inputFieldName: InputMaterial
+    outputFieldName: OutputMaterial
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 0bd30986-557b-44f7-9d3c-23cc0a5127a6
+    owner: {fileID: 11400000}
+    inputNodeGUID: 47eaf9c9-949d-4e07-bd54-71485c3ce02d
+    outputNodeGUID: 318400cc-c05d-4f31-ac2f-81157c6e84f8
+    inputFieldName: InputMaterial
+    outputFieldName: OutputMaterial
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 1442d54b-ce06-4dbe-8376-bc71dbf05679
+    owner: {fileID: 11400000}
+    inputNodeGUID: b283ae2c-f725-4653-98fa-a397ff1c07fe
+    outputNodeGUID: 26d6a4d4-e6b0-4203-94f2-5efb2b8150d3
+    inputFieldName: InputFlows
+    outputFieldName: StartFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 41742f12-bc03-4f25-9995-978e67620b1c
+    owner: {fileID: 11400000}
+    inputNodeGUID: df920862-c3f1-40e5-9431-818a149de2d4
+    outputNodeGUID: b283ae2c-f725-4653-98fa-a397ff1c07fe
+    inputFieldName: InputFlows
+    outputFieldName: OtherOutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 07cb1e46-d152-4080-8d38-0ed33ba0cf89
+    owner: {fileID: 11400000}
+    inputNodeGUID: bb9156d0-c485-46df-88fa-5983447e0c03
+    outputNodeGUID: b283ae2c-f725-4653-98fa-a397ff1c07fe
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 1e230ac3-c3d4-4d1b-a1b8-a097c53c52b2
+    owner: {fileID: 11400000}
+    inputNodeGUID: bb9156d0-c485-46df-88fa-5983447e0c03
+    outputNodeGUID: df920862-c3f1-40e5-9431-818a149de2d4
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: c2880d27-6dcb-44a8-a519-8b47e9b92a33
+    owner: {fileID: 11400000}
+    inputNodeGUID: fe071c81-df24-4835-b4e7-4c933ffe8b59
+    outputNodeGUID: bb9156d0-c485-46df-88fa-5983447e0c03
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 4e110043-9d2e-4f55-a055-64ed24df35d9
+    owner: {fileID: 11400000}
+    inputNodeGUID: a8fb52da-44c2-4ae1-b6e5-7b2ed399b78c
+    outputNodeGUID: fe071c81-df24-4835-b4e7-4c933ffe8b59
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 77d86596-0430-45e8-9eb0-582e3542df68
+    owner: {fileID: 11400000}
+    inputNodeGUID: 47eaf9c9-949d-4e07-bd54-71485c3ce02d
+    outputNodeGUID: fe071c81-df24-4835-b4e7-4c933ffe8b59
+    inputFieldName: InputFlows
+    outputFieldName: OtherOutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 06afd90c-b050-4528-8cae-e7e7e5f1af53
+    owner: {fileID: 11400000}
+    inputNodeGUID: 6518e3cb-257a-4596-85c5-452bc6b24a77
+    outputNodeGUID: a8fb52da-44c2-4ae1-b6e5-7b2ed399b78c
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 40237552-4053-408d-b753-4643e20c7476
+    owner: {fileID: 11400000}
+    inputNodeGUID: bb9156d0-c485-46df-88fa-5983447e0c03
+    outputNodeGUID: f5e1ef3c-a1a7-47ac-ba00-8f70b067de68
+    inputFieldName: Height
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 23454fd9-31ed-45ea-9b5a-fed86616cb27
+    owner: {fileID: 11400000}
+    inputNodeGUID: a8fb52da-44c2-4ae1-b6e5-7b2ed399b78c
+    outputNodeGUID: 7edcd3de-b9a0-4866-bda6-eaa34094e7b8
+    inputFieldName: Height
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: fc3e8058-d3f7-4e5c-add1-ee37c5467427
+    owner: {fileID: 11400000}
+    inputNodeGUID: 87d46ea6-e687-435d-87cc-92ef50f93b42
+    outputNodeGUID: d415cc88-d2ea-40ee-b873-6e63c159df83
+    inputFieldName: MaterialColor
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 93ece7ce-ba7c-4ba7-9b9c-e674fc293034
+    owner: {fileID: 11400000}
+    inputNodeGUID: 318400cc-c05d-4f31-ac2f-81157c6e84f8
+    outputNodeGUID: 455428bf-92a8-466a-af89-7fb69b9911fb
+    inputFieldName: MaterialColor
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  groups: []
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 82
+      y: 72
+      width: 493
+      height: 268
+    opened: 0
+    editorType:
+      serializedType: ProceduralParameterView, Assembly-CSharp-Editor, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: -449, y: -252, z: 0}
+  scale: {x: 0.8695652, y: 0.8695652, z: 1}
+  showParameterView: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: InputNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 26d6a4d4-e6b0-4203-94f2-5efb2b8150d3
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 201.67995
+          y: 125.599976
+          width: 102.399994
+          height: 75.20001
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    00000001:
+      type: {class: Extrude, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: bb9156d0-c485-46df-88fa-5983447e0c03
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 985
+          y: 120
+          width: 268
+          height: 120
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Height: 1
+        extrudeMethod: 0
+    00000002:
+      type: {class: SplitFace, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: fe071c81-df24-4835-b4e7-4c933ffe8b59
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 1323
+          y: 120.5
+          width: 220
+          height: 141
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        FaceSelector: 4
+        NewObjectParent: 0
+        ObjectName: Tejado
+    00000003:
+      type: {class: BasicRoof, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: a8fb52da-44c2-4ae1-b6e5-7b2ed399b78c
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 1727
+          y: 121
+          width: 194
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Height: 0.3
+    00000004:
+      type: {class: SetMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 6518e3cb-257a-4596-85c5-452bc6b24a77
+        computeOrder: 10
+        position:
+          serializedVersion: 2
+          x: 2073.5735
+          y: 121.600006
+          width: 211.19995
+          height: 99.2
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        InputMaterial: {fileID: 0}
+    00000005:
+      type: {class: StandardMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 87d46ea6-e687-435d-87cc-92ef50f93b42
+        computeOrder: 9
+        position:
+          serializedVersion: 2
+          x: 1825.8898
+          y: 401.59998
+          width: 232
+          height: 75.20001
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        MaterialColor: {r: 0.8490566, g: 0.24923456, b: 0, a: 0}
+        Metallic: 0
+        Smoothness: 0
+        Texture: {fileID: 2800000, guid: a71ab89f34af16448a5142f221ebfbc1, type: 3}
+        OutputMaterial: {fileID: 0}
+    00000006:
+      type: {class: SetMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 47eaf9c9-949d-4e07-bd54-71485c3ce02d
+        computeOrder: 13
+        position:
+          serializedVersion: 2
+          x: 1554.5
+          y: 303
+          width: 207
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        InputMaterial: {fileID: 0}
+    00000007:
+      type: {class: StandardMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 318400cc-c05d-4f31-ac2f-81157c6e84f8
+        computeOrder: 12
+        position:
+          serializedVersion: 2
+          x: 1304.0001
+          y: 534.0001
+          width: 239
+          height: 143
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        MaterialColor: {r: 0.8494492, g: 0.8584906, b: 0.7005607, a: 0}
+        Metallic: 0
+        Smoothness: 0
+        Texture: {fileID: 2800000, guid: 3a7eddc6ec801fe4bb21b76c72606355, type: 3}
+        OutputMaterial: {fileID: 0}
+    00000008:
+      type: {class: CheckNullMeshNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: b283ae2c-f725-4653-98fa-a397ff1c07fe
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 403.4999
+          y: 125.600075
+          width: 197.59998
+          height: 99.2
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    00000009:
+      type: {class: PlaneNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: df920862-c3f1-40e5-9431-818a149de2d4
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 621.0999
+          y: 279.20004
+          width: 204
+          height: 192
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Width: 1
+        Height: 1
+        WidthCuts: 0
+        HeightCuts: 0
+        ObjectName: Plane
+    0000000A:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: f5e1ef3c-a1a7-47ac-ba00-8f70b067de68
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 702
+          y: 214
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 1f08c631-42f7-4f8a-a2b1-6f6e0ca8eb51
+        accessor: 0
+    0000000B:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 7edcd3de-b9a0-4866-bda6-eaa34094e7b8
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 1614
+          y: 234
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 73b4cf16-5892-4394-81b7-8294bcc76372
+        accessor: 0
+    0000000C:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: d415cc88-d2ea-40ee-b873-6e63c159df83
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 1699
+          y: 497
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 82aa4f52-7ce6-477b-8fc2-c4c0fb1590c8
+        accessor: 0
+    0000000D:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 455428bf-92a8-466a-af89-7fb69b9911fb
+        computeOrder: 11
+        position:
+          serializedVersion: 2
+          x: 1106
+          y: 535
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 1030fd60-788f-40b1-a8ab-722da95966c1
+        accessor: 0
+    0000000E:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 1f08c631-42f7-4f8a-a2b1-6f6e0ca8eb51
+        name: Height
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 18
+        val: 1
+    0000000F:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 73b4cf16-5892-4394-81b7-8294bcc76372
+        name: Roof Height
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 19
+        val: 0.3
+    00000010:
+      type: {class: ColorParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 82aa4f52-7ce6-477b-8fc2-c4c0fb1590c8
+        name: Roof Color
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 20
+        val: {r: 0.8490566, g: 0.24923456, b: 0, a: 0}
+    00000011:
+      type: {class: ColorParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 1030fd60-788f-40b1-a8ab-722da95966c1
+        name: Wall Color
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 21
+        val: {r: 0.8494492, g: 0.8584906, b: 0.7005607, a: 0}
+    00000012:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 1f08c631-42f7-4f8a-a2b1-6f6e0ca8eb51
+        mode: 0
+        min: 0
+        max: 1
+    00000013:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 73b4cf16-5892-4394-81b7-8294bcc76372
+        mode: 0
+        min: 0
+        max: 1
+    00000014:
+      type: {class: ColorParameter/ColorSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 82aa4f52-7ce6-477b-8fc2-c4c0fb1590c8
+        mode: 0
+    00000015:
+      type: {class: ColorParameter/ColorSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 1030fd60-788f-40b1-a8ab-722da95966c1
+        mode: 0

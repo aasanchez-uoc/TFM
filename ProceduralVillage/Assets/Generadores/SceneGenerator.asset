@@ -1,0 +1,1119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2552acd5b2e1a2f4c842a872ae87b7f7, type: 3}
+  m_Name: SceneGenerator
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  - id: 20
+  - id: 21
+  - id: 22
+  - id: 23
+  - id: 24
+  - id: 25
+  - id: 26
+  - id: 27
+  - id: 28
+  edges:
+  - GUID: 9dd3f31d-521d-4b22-92df-f9ff989efb2d
+    owner: {fileID: 11400000}
+    inputNodeGUID: 022bc93f-3de5-4626-8c11-f300bfbe43c2
+    outputNodeGUID: 074c36df-9b89-4dad-ac3f-70da2fbbfc99
+    inputFieldName: InputFlows
+    outputFieldName: OtherOutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: df4e20f9-10bb-4b23-993a-82810134071e
+    owner: {fileID: 11400000}
+    inputNodeGUID: a57d8472-daa1-487e-a6be-38eaca38dac2
+    outputNodeGUID: 022bc93f-3de5-4626-8c11-f300bfbe43c2
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 0b292f9d-d7a6-4cab-9492-a64e5b2c29eb
+    owner: {fileID: 11400000}
+    inputNodeGUID: 3c967e2b-953c-40e0-bec1-dcba9146f697
+    outputNodeGUID: a57d8472-daa1-487e-a6be-38eaca38dac2
+    inputFieldName: InputFlows
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 2d75effc-e1f1-49ee-ac5f-7f528cefdf5d
+    owner: {fileID: 11400000}
+    inputNodeGUID: 3c967e2b-953c-40e0-bec1-dcba9146f697
+    outputNodeGUID: b58a07fb-a1ad-4613-8b78-90e549060559
+    inputFieldName: InputMaterial
+    outputFieldName: OutputMaterial
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 7f8089e9-422d-4a51-8bb3-cafcddb0a83e
+    owner: {fileID: 11400000}
+    inputNodeGUID: b58a07fb-a1ad-4613-8b78-90e549060559
+    outputNodeGUID: 9cd13e1c-e9ea-4804-a83e-eeb7ba81eecf
+    inputFieldName: MaterialColor
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 4005b469-2cd4-48e2-9159-95616b421497
+    owner: {fileID: 11400000}
+    inputNodeGUID: 2d7d4d9b-8adc-4bc4-9af1-f81ab4ced92b
+    outputNodeGUID: 074c36df-9b89-4dad-ac3f-70da2fbbfc99
+    inputFieldName: input
+    outputFieldName: OutputFlow
+    inputPortIdentifier: 0
+    outputPortIdentifier: 
+  - GUID: 1963ed0c-b0a8-4a71-a53b-1e72dcf9044c
+    owner: {fileID: 11400000}
+    inputNodeGUID: 27c09f00-9d8e-4366-8446-23389349359a
+    outputNodeGUID: ed827fb1-721b-4c7e-844a-a2d609a7d15f
+    inputFieldName: a
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 9a0b6417-72af-4702-b5a0-29e3aba40593
+    owner: {fileID: 11400000}
+    inputNodeGUID: 022bc93f-3de5-4626-8c11-f300bfbe43c2
+    outputNodeGUID: 27c09f00-9d8e-4366-8446-23389349359a
+    inputFieldName: Width
+    outputFieldName: o
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: e6524bef-ff07-4af0-8b81-8e5bb3661faa
+    owner: {fileID: 11400000}
+    inputNodeGUID: 0675f2c0-6693-49ad-b67f-c6308effd42b
+    outputNodeGUID: d5e7cf63-ae2c-44af-836a-e6f7b61d74bb
+    inputFieldName: a
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 7614eea6-5e5e-45bc-9f89-ab1561ddd3b6
+    owner: {fileID: 11400000}
+    inputNodeGUID: 3d8491d3-535e-4fc2-b300-d4ec18269e85
+    outputNodeGUID: a816ba70-a97e-420e-9264-1296e43bc8ae
+    inputFieldName: a
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 4b44bfc9-4b3b-41d4-99c8-f32ff04ef31a
+    owner: {fileID: 11400000}
+    inputNodeGUID: a57d8472-daa1-487e-a6be-38eaca38dac2
+    outputNodeGUID: 3d8491d3-535e-4fc2-b300-d4ec18269e85
+    inputFieldName: x
+    outputFieldName: o
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 3bc30a4e-d2a9-4b89-89ec-f0187782e46f
+    owner: {fileID: 11400000}
+    inputNodeGUID: a57d8472-daa1-487e-a6be-38eaca38dac2
+    outputNodeGUID: 0675f2c0-6693-49ad-b67f-c6308effd42b
+    inputFieldName: z
+    outputFieldName: o
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 354d647d-f71f-40bc-88ca-08e8b1303a3d
+    owner: {fileID: 11400000}
+    inputNodeGUID: 88bd0edc-9561-4f44-b4df-542d118040de
+    outputNodeGUID: 6b6a735a-799f-448c-b516-e456a77ef23b
+    inputFieldName: a
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 0775a0df-9eb4-4e2d-8d48-f007b28010eb
+    owner: {fileID: 11400000}
+    inputNodeGUID: 022bc93f-3de5-4626-8c11-f300bfbe43c2
+    outputNodeGUID: 88bd0edc-9561-4f44-b4df-542d118040de
+    inputFieldName: Height
+    outputFieldName: o
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: d8045910-f886-45cd-8574-331449575f96
+    owner: {fileID: 11400000}
+    inputNodeGUID: 074c36df-9b89-4dad-ac3f-70da2fbbfc99
+    outputNodeGUID: 4e246658-b43b-489f-9af9-0fad8630e6bd
+    inputFieldName: InputFlows
+    outputFieldName: StartFlow
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 22850aed-7942-4268-9177-a2b2ff7d2344
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 2d7d4d9b-8adc-4bc4-9af1-f81ab4ced92b
+    inputFieldName: InputFlows
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 0
+  - GUID: 31996cfa-5fc4-4a21-b65c-86ae6f119c2a
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 58d378b6-73e5-4e0c-8b6b-ed27dd7e46f7
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: 0c33e190-94f8-42a9-8690-18e59cc08ae1
+    outputPortIdentifier: output
+  - GUID: c7cb4f2e-2156-4f8c-b9e2-40d4d3155125
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 4f6dc0c1-984a-461d-9eb4-411514c1ec25
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: 9947b343-0804-42a8-9768-fdeb16752891
+    outputPortIdentifier: output
+  - GUID: 0619397a-41c5-4c0a-b718-42186390400e
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 7918e0df-36c2-4861-982c-63ded8d3a05a
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: c6609c44-8dad-4cfd-bcc5-91c5e594669c
+    outputPortIdentifier: output
+  - GUID: 0fffc187-ddba-4e2a-b02a-ddd29511bdd1
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: ea4d2539-a675-4420-92ad-ac3e1ab00cd0
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: f410137d-7240-4fc1-9f18-6a5b920dd10e
+    outputPortIdentifier: output
+  - GUID: 10db5fc1-bc19-4ee0-bde0-285b53ace329
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 282add50-fb5d-43dc-9040-e21845acf7fa
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: 2908a8ae-1807-40b9-b79b-34a74a3a3e87
+    outputPortIdentifier: output
+  - GUID: a236c6e0-fc12-4968-ae6e-4614611671b4
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: baa2cc45-5440-44d9-946b-8b7f43fb55cb
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: b775aace-5531-4309-85a8-5380b9165a72
+    outputPortIdentifier: output
+  - GUID: 4ba20f58-45e9-4e5c-8791-f75b8bbda3bf
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: b5a1ce7b-efc3-4864-9ea6-e6a21031f8b7
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: 4e026337-fde8-49e2-bf76-688d28bacdb1
+    outputPortIdentifier: output
+  - GUID: 1bf05ad8-c552-485c-817b-b610dbadf49e
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 17732c1c-4e17-4f85-8690-aebff1ca32bc
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: 6207abd0-1368-4d49-bde6-040bd862bf0c
+    outputPortIdentifier: output
+  - GUID: 5c5ea17e-ea53-445b-b0a8-abc38fa9e3fd
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 3015a187-82ec-4abb-9d72-8146f98b97e0
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: 41456954-ac65-42d1-91f5-bdd854ad60db
+    outputPortIdentifier: output
+  - GUID: 3791f561-9d05-46e1-b303-782c341f2955
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 159f4611-a9cf-4c73-b18f-2b3b707a1ea0
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: d95f5662-2a72-4c7a-bb04-da67f12157cb
+    outputPortIdentifier: output
+  - GUID: e86ff145-967e-4f34-8be5-26da8a8f16c2
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 1976cf94-a108-47da-8d63-4346857c07c7
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: 1f64a88f-f3b1-4fa1-a530-82b570013b5d
+    outputPortIdentifier: output
+  - GUID: 4e5d9c23-2c68-4af3-8e46-40c8c30aa09d
+    owner: {fileID: 11400000}
+    inputNodeGUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+    outputNodeGUID: 5f9d9451-92f3-45f1-b41f-9dd53ed50528
+    inputFieldName: graphInputs
+    outputFieldName: output
+    inputPortIdentifier: fe031737-ba5b-471c-a2f3-52b0638dadac
+    outputPortIdentifier: output
+  groups: []
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 321
+      height: 239
+    opened: 1
+    editorType:
+      serializedType: ProceduralParameterView, Assembly-CSharp-Editor, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - id: 29
+  - id: 30
+  - id: 31
+  - id: 32
+  - id: 33
+  - id: 34
+  - id: 35
+  - id: 36
+  - id: 37
+  - id: 38
+  - id: 39
+  - id: 40
+  - id: 41
+  - id: 42
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: 501, y: 216, z: 0}
+  scale: {x: 0.2471847, y: 0.2471847, z: 1}
+  showParameterView: 1
+  references:
+    version: 1
+    00000000:
+      type: {class: InputNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 4e246658-b43b-489f-9af9-0fad8630e6bd
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: -9
+          y: -424
+          width: 101
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    00000001:
+      type: {class: DivergeFlowNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 074c36df-9b89-4dad-ac3f-70da2fbbfc99
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 294.99432
+          y: -424
+          width: 194
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    00000002:
+      type: {class: PlaneNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 022bc93f-3de5-4626-8c11-f300bfbe43c2
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 395.99255
+          y: 431.96252
+          width: 203
+          height: 192
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Width: 500
+        Height: 500
+        WidthCuts: 0
+        HeightCuts: 0
+        ObjectName: Plane
+    00000003:
+      type: {class: TraslateNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: a57d8472-daa1-487e-a6be-38eaca38dac2
+        computeOrder: 11
+        position:
+          serializedVersion: 2
+          x: 790.51135
+          y: 442.7382
+          width: 194
+          height: 147
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        x: 25
+        y: -0.001
+        z: 25
+    00000004:
+      type: {class: SetMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 3c967e2b-953c-40e0-bec1-dcba9146f697
+        computeOrder: 14
+        position:
+          serializedVersion: 2
+          x: 1178.5112
+          y: 442.7382
+          width: 207
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        InputMaterial: {fileID: 0}
+    00000005:
+      type: {class: StandardMaterialNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: b58a07fb-a1ad-4613-8b78-90e549060559
+        computeOrder: 13
+        position:
+          serializedVersion: 2
+          x: 966.5112
+          y: 642.7382
+          width: 226
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        MaterialColor: {r: 0.6117647, g: 0.90588236, b: 0.21960784, a: 0}
+        Metallic: 0
+        Smoothness: 0
+        Texture: {fileID: 0}
+        OutputMaterial: {fileID: 0}
+    00000006:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 58d378b6-73e5-4e0c-8b6b-ed27dd7e46f7
+        computeOrder: 15
+        position:
+          serializedVersion: 2
+          x: 772.0001
+          y: -353.50006
+          width: 108
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 80b2dc3c-80cc-4c11-9e3e-50f9049c54e5
+        accessor: 0
+    00000007:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 4f6dc0c1-984a-461d-9eb4-411514c1ec25
+        computeOrder: 16
+        position:
+          serializedVersion: 2
+          x: 765
+          y: -305.85007
+          width: 113
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 2f73571f-80b4-453f-a577-8d25afd47ded
+        accessor: 0
+    00000008:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 7918e0df-36c2-4861-982c-63ded8d3a05a
+        computeOrder: 17
+        position:
+          serializedVersion: 2
+          x: 766
+          y: -268.85004
+          width: 117
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 50382852-809d-4027-b19c-6c67c82b633d
+        accessor: 0
+    00000009:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: ea4d2539-a675-4420-92ad-ac3e1ab00cd0
+        computeOrder: 18
+        position:
+          serializedVersion: 2
+          x: 770.00006
+          y: -231.85007
+          width: 101
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 08ca4e9a-4a71-459e-a72c-4d899069355e
+        accessor: 0
+    0000000A:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 9cd13e1c-e9ea-4804-a83e-eeb7ba81eecf
+        computeOrder: 12
+        position:
+          serializedVersion: 2
+          x: 726.51135
+          y: 680.7382
+          width: 101
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 08ca4e9a-4a71-459e-a72c-4d899069355e
+        accessor: 0
+    0000000B:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: baa2cc45-5440-44d9-946b-8b7f43fb55cb
+        computeOrder: 19
+        position:
+          serializedVersion: 2
+          x: 779.2
+          y: -121.80789
+          width: 104.79999
+          height: 37.6
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 93bb6aa1-a8dc-434d-95cf-174410ef433a
+        accessor: 0
+    0000000C:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: b5a1ce7b-efc3-4864-9ea6-e6a21031f8b7
+        computeOrder: 20
+        position:
+          serializedVersion: 2
+          x: 772
+          y: -67.40791
+          width: 133.59998
+          height: 37.6
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: acdd22bb-e493-4708-ac72-bfe37703c32c
+        accessor: 0
+    0000000D:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 17732c1c-4e17-4f85-8690-aebff1ca32bc
+        computeOrder: 21
+        position:
+          serializedVersion: 2
+          x: 756
+          y: -18.60791
+          width: 144.79999
+          height: 37.600002
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 2f711e91-4b56-4bf7-8134-bb5864d6c9b6
+        accessor: 0
+    0000000E:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 3015a187-82ec-4abb-9d72-8146f98b97e0
+        computeOrder: 22
+        position:
+          serializedVersion: 2
+          x: 776
+          y: 37.392113
+          width: 148.79999
+          height: 37.6
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 7d68a91f-57a3-49ad-9ed0-7e7dcd3b89d6
+        accessor: 0
+    0000000F:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 159f4611-a9cf-4c73-b18f-2b3b707a1ea0
+        computeOrder: 23
+        position:
+          serializedVersion: 2
+          x: 745.6
+          y: 93.600006
+          width: 127.20001
+          height: 36.800003
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: d243aba4-123a-4e48-b429-2766bfeb729c
+        accessor: 0
+    00000010:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 1976cf94-a108-47da-8d63-4346857c07c7
+        computeOrder: 24
+        position:
+          serializedVersion: 2
+          x: 770.4
+          y: 131.79208
+          width: 130.39996
+          height: 37.600006
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 26bb9d46-64f6-4c73-be7d-33861e2ffc80
+        accessor: 0
+    00000011:
+      type: {class: RelayNode, ns: , asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 2d7d4d9b-8adc-4bc4-9af1-f81ab4ced92b
+        computeOrder: 25
+        position:
+          serializedVersion: 2
+          x: 1057.4502
+          y: -375.48004
+          width: 200
+          height: 200
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        unpackOutput: 0
+        packInput: 0
+        inputEdgeCount: 1
+    00000012:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: ed827fb1-721b-4c7e-844a-a2d609a7d15f
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 2.5085068
+          y: 443
+          width: 108
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 80b2dc3c-80cc-4c11-9e3e-50f9049c54e5
+        accessor: 0
+    00000013:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 6b6a735a-799f-448c-b516-e456a77ef23b
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 12.5648575
+          y: 605.00006
+          width: 113
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 2f73571f-80b4-453f-a577-8d25afd47ded
+        accessor: 0
+    00000014:
+      type: {class: FloatMulNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 27c09f00-9d8e-4366-8446-23389349359a
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 200.05324
+          y: 457.88007
+          width: 119
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        a: 50
+        b: 10
+        o: 500
+    00000015:
+      type: {class: FloatMulNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 88bd0edc-9561-4f44-b4df-542d118040de
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 192.9325
+          y: 574.5
+          width: 119
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        a: 50
+        b: 10
+        o: 500
+    00000016:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: d5e7cf63-ae2c-44af-836a-e6f7b61d74bb
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 300.00006
+          y: 853.3422
+          width: 113
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 2f73571f-80b4-453f-a577-8d25afd47ded
+        accessor: 0
+    00000017:
+      type: {class: FloatMulNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 3d8491d3-535e-4fc2-b300-d4ec18269e85
+        computeOrder: 10
+        position:
+          serializedVersion: 2
+          x: 487.00006
+          y: 706.3422
+          width: 119
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        a: 50
+        b: 0.5
+        o: 25
+    00000018:
+      type: {class: FloatMulNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 0675f2c0-6693-49ad-b67f-c6308effd42b
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 480.00006
+          y: 823.3422
+          width: 119
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        a: 50
+        b: 0.5
+        o: 25
+    00000019:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: a816ba70-a97e-420e-9264-1296e43bc8ae
+        computeOrder: 9
+        position:
+          serializedVersion: 2
+          x: 290.00006
+          y: 691.3422
+          width: 108
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 80b2dc3c-80cc-4c11-9e3e-50f9049c54e5
+        accessor: 0
+    0000001A:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 282add50-fb5d-43dc-9040-e21845acf7fa
+        computeOrder: 26
+        position:
+          serializedVersion: 2
+          x: 770.4
+          y: -169.80792
+          width: 110.39996
+          height: 37.600006
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 8fd3c182-bf39-4d24-94a7-dcab74105ac9
+        accessor: 0
+    0000001B:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 5f9d9451-92f3-45f1-b41f-9dd53ed50528
+        computeOrder: 27
+        position:
+          serializedVersion: 2
+          x: 924.80005
+          y: 191.52498
+          width: 124.00006
+          height: 36.800003
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: f3fa27d3-b31f-4a0c-aa63-eb1941d560d5
+        accessor: 0
+    0000001C:
+      type: {class: GraphNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: VillageGenerator
+        GUID: b96a0915-d428-4f96-9205-2ae64ba97ef6
+        computeOrder: 28
+        position:
+          serializedVersion: 2
+          x: 1392.9253
+          y: -306.71185
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        subGraphAsset: {fileID: 11400000, guid: 544a4e6042711bf4eac87514a0f5e084, type: 2}
+    0000001D:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 2f73571f-80b4-453f-a577-8d25afd47ded
+        name: Village Length
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 43
+        val: 50
+    0000001E:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 80b2dc3c-80cc-4c11-9e3e-50f9049c54e5
+        name: Village Width
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 44
+        val: 50
+    0000001F:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 50382852-809d-4027-b19c-6c67c82b633d
+        name: Smooth Factor
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 45
+        val: 0.1
+    00000020:
+      type: {class: ColorParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 08ca4e9a-4a71-459e-a72c-4d899069355e
+        name: Grass Color
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 46
+        val: {r: 0.6117647, g: 0.90588236, b: 0.21960784, a: 0}
+    00000021:
+      type: {class: ColorParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 6e6a96bb-fb23-4154-a64b-690364677292
+        name: Roof Color
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 47
+        val: {r: 0.8509804, g: 0.2509804, b: 0, a: 0}
+    00000022:
+      type: {class: ColorParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: a55eeada-2bdf-457c-821f-5969c0a15c0c
+        name: Wall Color
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 48
+        val: {r: 0.8509804, g: 0.85882354, b: 0.7019608, a: 0}
+    00000023:
+      type: {class: ColorParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 8fd3c182-bf39-4d24-94a7-dcab74105ac9
+        name: Streets Color
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 49
+        val: {r: 0.25490198, g: 0.24313726, b: 0.19215687, a: 0}
+    00000024:
+      type: {class: IntParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 93bb6aa1-a8dc-434d-95cf-174410ef433a
+        name: Block Count
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 50
+        val: 20
+    00000025:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: acdd22bb-e493-4708-ac72-bfe37703c32c
+        name: Building Min Area
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 51
+        val: 20
+    00000026:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 2f711e91-4b56-4bf7-8134-bb5864d6c9b6
+        name: Min building height
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 52
+        val: 0.5
+    00000027:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 7d68a91f-57a3-49ad-9ed0-7e7dcd3b89d6
+        name: Max Building Height
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 53
+        val: 2
+    00000028:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: d243aba4-123a-4e48-b429-2766bfeb729c
+        name: Min Roof Height
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 54
+        val: 0.5
+    00000029:
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 26bb9d46-64f6-4c73-be7d-33861e2ffc80
+        name: Max Roof Height
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 55
+        val: 1
+    0000002A:
+      type: {class: IntParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: f3fa27d3-b31f-4a0c-aa63-eb1941d560d5
+        name: Areas Per Block
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 56
+        val: 4
+    0000002B:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 2f73571f-80b4-453f-a577-8d25afd47ded
+        mode: 0
+        min: 0
+        max: 1
+    0000002C:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 80b2dc3c-80cc-4c11-9e3e-50f9049c54e5
+        mode: 0
+        min: 0
+        max: 1
+    0000002D:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 50382852-809d-4027-b19c-6c67c82b633d
+        mode: 1
+        min: 0.1
+        max: 1
+    0000002E:
+      type: {class: ColorParameter/ColorSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 08ca4e9a-4a71-459e-a72c-4d899069355e
+        mode: 0
+    0000002F:
+      type: {class: ColorParameter/ColorSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 6e6a96bb-fb23-4154-a64b-690364677292
+        mode: 0
+    00000030:
+      type: {class: ColorParameter/ColorSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: a55eeada-2bdf-457c-821f-5969c0a15c0c
+        mode: 0
+    00000031:
+      type: {class: ColorParameter/ColorSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 8fd3c182-bf39-4d24-94a7-dcab74105ac9
+        mode: 0
+    00000032:
+      type: {class: IntParameter/IntSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 93bb6aa1-a8dc-434d-95cf-174410ef433a
+        mode: 0
+        min: 0
+        max: 10
+    00000033:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: acdd22bb-e493-4708-ac72-bfe37703c32c
+        mode: 0
+        min: 0
+        max: 1
+    00000034:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 2f711e91-4b56-4bf7-8134-bb5864d6c9b6
+        mode: 0
+        min: 0
+        max: 1
+    00000035:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 7d68a91f-57a3-49ad-9ed0-7e7dcd3b89d6
+        mode: 0
+        min: 0
+        max: 1
+    00000036:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: d243aba4-123a-4e48-b429-2766bfeb729c
+        mode: 0
+        min: 0
+        max: 1
+    00000037:
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 26bb9d46-64f6-4c73-be7d-33861e2ffc80
+        mode: 0
+        min: 0
+        max: 1
+    00000038:
+      type: {class: IntParameter/IntSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 1
+        guid: f3fa27d3-b31f-4a0c-aa63-eb1941d560d5
+        mode: 0
+        min: 0
+        max: 10
