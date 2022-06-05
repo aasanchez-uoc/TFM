@@ -148,8 +148,8 @@ MonoBehaviour:
       serializedVersion: 2
       x: 82
       y: 72
-      width: 493
-      height: 268
+      width: 287
+      height: 265
     opened: 0
     editorType:
       serializedType: ProceduralParameterView, Assembly-CSharp-Editor, Version=0.0.0.0,
@@ -162,8 +162,8 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: -449, y: -252, z: 0}
-  scale: {x: 0.8695652, y: 0.8695652, z: 1}
+  position: {x: -47, y: -29, z: 0}
+  scale: {x: 0.7561437, y: 0.7561437, z: 1}
   showParameterView: 0
   references:
     version: 1
@@ -241,10 +241,10 @@ MonoBehaviour:
         computeOrder: 10
         position:
           serializedVersion: 2
-          x: 2073.5735
-          y: 121.600006
-          width: 211.19995
-          height: 99.2
+          x: 2124.89
+          y: 120.00001
+          width: 207
+          height: 99
         expanded: 0
         debug: 0
         nodeLock: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
         MaterialColor: {r: 0.8494492, g: 0.8584906, b: 0.7005607, a: 0}
         Metallic: 0
         Smoothness: 0
-        Texture: {fileID: 2800000, guid: 3a7eddc6ec801fe4bb21b76c72606355, type: 3}
+        Texture: {fileID: 2800000, guid: 5b367b685ce4fd44b86d049fc0cdda03, type: 3}
         OutputMaterial: {fileID: 0}
     00000008:
       type: {class: CheckNullMeshNode, ns: , asm: Assembly-CSharp}
@@ -382,10 +382,10 @@ MonoBehaviour:
         computeOrder: 8
         position:
           serializedVersion: 2
-          x: 1699
-          y: 497
-          width: 100
-          height: 100
+          x: 1686.5217
+          y: 445.17398
+          width: 96
+          height: 37
         expanded: 0
         debug: 0
         nodeLock: 0
@@ -399,10 +399,10 @@ MonoBehaviour:
         computeOrder: 11
         position:
           serializedVersion: 2
-          x: 1106
-          y: 535
-          width: 100
-          height: 100
+          x: 1160.0001
+          y: 578.6425
+          width: 93
+          height: 37
         expanded: 0
         debug: 0
         nodeLock: 0

@@ -277,7 +277,7 @@ MonoBehaviour:
       y: 48
       width: 321
       height: 239
-    opened: 1
+    opened: 0
     editorType:
       serializedType: ProceduralParameterView, Assembly-CSharp-Editor, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -299,9 +299,9 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 501, y: 216, z: 0}
-  scale: {x: 0.2471847, y: 0.2471847, z: 1}
-  showParameterView: 1
+  position: {x: 716, y: 159, z: 0}
+  scale: {x: 0.43232757, y: 0.43232757, z: 1}
+  showParameterView: 0
   references:
     version: 1
     00000000:

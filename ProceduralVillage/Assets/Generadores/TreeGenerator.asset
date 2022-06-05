@@ -142,7 +142,7 @@ MonoBehaviour:
       y: 40
       width: 290
       height: 188
-    opened: 1
+    opened: 0
     editorType:
       serializedType: ProceduralParameterView, Assembly-CSharp-Editor, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -151,9 +151,9 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: -1278, y: 140, z: 0}
-  scale: {x: 0.65751624, y: 0.65751624, z: 1}
-  showParameterView: 1
+  position: {x: -685, y: 120, z: 0}
+  scale: {x: 0.7561437, y: 0.7561437, z: 1}
+  showParameterView: 0
   references:
     version: 1
     00000000:
@@ -237,7 +237,7 @@ MonoBehaviour:
         position:
           serializedVersion: 2
           x: 1319
-          y: 100
+          y: 79
           width: 246
           height: 120
         expanded: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
         debug: 0
         nodeLock: 0
         x: 0
-        y: 254.86438
+        y: 48.312984
         z: 0
     0000000A:
       type: {class: TraslateNode, ns: , asm: Assembly-CSharp}
@@ -372,7 +372,7 @@ MonoBehaviour:
         nodeLock: 0
         min: 0
         max: 360
-        o: 254.86438
+        o: 48.312984
     0000000C:
       type: {class: SetScaleNode, ns: , asm: Assembly-CSharp}
       data:
